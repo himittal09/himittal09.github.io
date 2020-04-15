@@ -1,0 +1,19 @@
+img {
+    max-width: 100%;
+}
+
+:host {
+    background-image: url('../../../../assets/pictures/bridge.jpg');
+    background-color: #000000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    mat-icon {
+        text-decoration: none;
+        font-size: 50px;
+        height: 50px;
+        width: 50px;
+    }
+}
