@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { HomeComponent } from './shared/components/home/home.component';
 import { RouteNotFoundComponent } from './shared/components/route-not-found/route-not-found.component';
 
@@ -40,7 +41,8 @@ import { RouteNotFoundComponent } from './shared/components/route-not-found/rout
     MatListModule,
     MatCardModule,
     MatDividerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

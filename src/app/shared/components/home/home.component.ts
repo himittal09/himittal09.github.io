@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -9,6 +9,8 @@ import { MatIconRegistry } from '@angular/material/icon';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  imageURL: SafeStyle;
 
   constructor(private matIconRegisty: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegisty.addSvgIcon(
@@ -27,6 +29,7 @@ export class HomeComponent implements OnInit {
       'StackOverflow_Icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stackoverflow.svg')
     );
+    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/bridge.jpg'})`);
   }
 
   ngOnInit(): void {
