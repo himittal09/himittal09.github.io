@@ -1,47 +1,94 @@
-<div class="idk">
-  <div [style.background-image]="imageURL" class="imageholder"></div>
-  <div class="container">
-    <div class="profileImage">
-      <div class="pixar">
-        <img src="../assets/pictures/me.jpg" alt="Himanshu Mittal">
+<div class="page-content">
+  <div class="page-header">
+    <div class="page-header-image" [style.background-image]="imageURL"></div>
+    <div class="container">
+      <div class="content-center">
+        <div class="cc-profile-image"><a href="#"><img src="../../../../assets/pictures/me.jpg" alt="Image"/></a></div>
+        <div class="h2 title">Himanshu Mittal</div>
+        <p class="category">Web Developer, Graphic Designer,  Photographer</p>
+        <button type="button" mat-raised-button color="primary" class="btnontop">Hire me</button>
+        <button type="button" mat-raised-button color="primary" class="btnontop">Resume</button>
       </div>
-      <h1 class=".mat-h1">Himanshu Mittal</h1>
-      <p>Student, Developer, Pokemon</p>
-      <button type="button" mat-raised-button color="primary">Hire me</button>
-      <button type="button" mat-raised-button color="primary">Resume</button>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="button-container">
+          <a href="https://github.com/himittal09" class="btn" target="_blank" aria-label="Github Profile of Himanshu Mittal" matTooltip="Github Profile of Himanshu Mittal">
+            <button mat-fab>
+              <mat-icon aria-hidden="false" aria-label="Github Icon" svgIcon="GitHub_Icon" class="btn-github"></mat-icon>
+            </button>
+          </a>
+          <a href="https://www.hackerrank.com/himittal09" class="btn" target="_blank" aria-label="Hackerrank Profile of Himanshu Mittal" matTooltip="Hackerrank Profile of Himanshu Mittal">
+            <button mat-fab>
+              <mat-icon aria-hidden="false" aria-label="Hackerrank Icon" svgIcon="Hackerrank_Icon" class="btn-hackerrank"></mat-icon>
+            </button>
+          </a>
+          <a href="https://www.linkedin.com/in/himanshu-mittal-ba8465143/" class="btn" target="_blank" aria-label="LinkedIn Profile of Himanshu Mittal" matTooltip="Hackerrank Profile of Himanshu Mittal">
+            <button mat-fab>
+              <mat-icon aria-hidden="false" aria-label="LinkedIn Icon" svgIcon="LinkedIn_Icon" class="btn-linkedin"></mat-icon>
+            </button>
+          </a>
+          <a href="https://stackoverflow.com/users/6152976/himanshu-mittal" class="btn" target="_blank" aria-label="StackOverflow Profile of Himanshu Mittal" matTooltip="Hackerrank Profile of Himanshu Mittal">
+            <button mat-fab>
+              <mat-icon aria-hidden="false" aria-label="StackOverflow Icon" svgIcon="StackOverflow_Icon" class="btn-stackoverflow"></mat-icon>
+            </button>
+          </a>
+          <a href="mailto:himittal09@gmail.com" class="btn" target="_top" aria-label="Email of Himanshu Mittal" matTooltip="Email Himanshu Mittal">
+            <button mat-fab>
+              <mat-icon aria-hidden="false" aria-label="Email Icon">email</mat-icon>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <div class="container">
+
+      <mat-card>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <div class="h4 title">About</div>
+            <p>Hello! I am Himanshu Mittal. Web Developer, Graphic Designer and Photographer.</p>
+            <p>I'm an albatross</p>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="h4 title">Basic Information</div>
+            <div class="row">
+              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+              <div class="col-sm-8">23</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+              <div class="col-sm-8">himittal09@gmail.com</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+              <div class="col-sm-8">+91 8103-755-186</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+              <div class="col-sm-8">Chhattisgadh, India</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
+              <div class="col-sm-8">Hindi (native), English, Chhattisgadhi</div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+
     </div>
   </div>
-</div>
 
-<div class="container" >
-  <mat-card>
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4">
-      </div>
-      <mat-card-content class="col-sm-12 col-md-6 col-lg-8">
-        <mat-divider [vertical]="true"></mat-divider>
-        <h1>Himanshu Mittal</h1>
-        <mat-divider></mat-divider>
-
-        <mat-nav-list>
-          <a mat-list-item href="https://github.com/himittal09" target="_blank" aria-label="Github Profile of Himanshu Mittal" matTooltip="Github Profile of Himanshu Mittal">
-            <mat-icon aria-hidden="false" aria-label="Github Icon" svgIcon="GitHub_Icon" class="btn-github"></mat-icon>
-          </a>
-          <a mat-list-item href="https://www.hackerrank.com/himittal09" target="_blank" aria-label="Hackerrank Profile of Himanshu Mittal" matTooltip="Hackerrank Profile of Himanshu Mittal">
-            <mat-icon aria-hidden="false" aria-label="Hackerrank Icon" svgIcon="Hackerrank_Icon" class="btn-hackerrank"></mat-icon>
-          </a>
-          <a mat-list-item href="https://www.linkedin.com/in/himanshu-mittal-ba8465143/" target="_blank" aria-label="LinkedIn Profile of Himanshu Mittal" matTooltip="Hackerrank Profile of Himanshu Mittal">
-            <mat-icon aria-hidden="false" aria-label="LinkedIn Icon" svgIcon="LinkedIn_Icon" class="btn-linkedin"></mat-icon>
-          </a>
-          <a mat-list-item href="https://stackoverflow.com/users/6152976/himanshu-mittal" target="_blank" aria-label="StackOverflow Profile of Himanshu Mittal" matTooltip="Hackerrank Profile of Himanshu Mittal">
-            <mat-icon aria-hidden="false" aria-label="StackOverflow Icon" svgIcon="StackOverflow_Icon" class="btn-stackoverflow"></mat-icon>
-          </a>
-          <a mat-list-item href="mailto:himittal09@gmail.com" target="_top" aria-label="Email of Himanshu Mittal" matTooltip="Email Himanshu Mittal">
-            <mat-icon aria-hidden="false" aria-label="Email Icon">email</mat-icon>
-          </a>
-        </mat-nav-list>
-
-      </mat-card-content>
+  <footer>
+    <div class="container">
+      <span>Created by Himanshu Mittal with <mat-icon aria-hidden="true" color="warn">favorite</mat-icon></span>
+      <p>&copy; Himanshu Mittal </p>
     </div>
-  </mat-card>
+  </footer>
+
 </div>
