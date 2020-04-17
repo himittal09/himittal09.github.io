@@ -1,0 +1,92 @@
+{
+  "configVersion": 1,
+  "timestamp": 1587118283505,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.f65d4c5e0d90bb29b4e9.js",
+        "/main-es5.f65d4c5e0d90bb29b4e9.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.690002c25ea8557bb4b0.js",
+        "/polyfills-es5.9e286f6d9247438cbb02.js",
+        "/runtime-es2015.1eba213af0b233498d9d.js",
+        "/runtime-es5.1eba213af0b233498d9d.js",
+        "/styles.0c6b0673fd77f71fb65c.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/github.svg",
+        "/assets/icons/hackerrank.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/linkedin.svg",
+        "/assets/icons/stackoverflow.svg",
+        "/assets/pictures/bridge.jpg",
+        "/assets/pictures/me.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/github.svg": "090b06c620b1ff2b8523b0a9b710f434323922eb",
+    "/assets/icons/hackerrank.svg": "0d889c401e7e5cc1fe7fd37a602426e5a646bbb2",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/linkedin.svg": "440c00e88b491a4bf94fa0300f427c593fa7689c",
+    "/assets/icons/stackoverflow.svg": "c2510543c5a631bd83aebac30bdc3636f6fb1d55",
+    "/assets/pictures/bridge.jpg": "576f62b88065311c5cb8fa678e491fc3deea0687",
+    "/assets/pictures/me.jpg": "6494d53e3aa2c4bc91cea9da7e1eee5c1c1262c3",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "cde649d3c01a9b07c1c8de33c8f9e170f87b71e2",
+    "/main-es2015.f65d4c5e0d90bb29b4e9.js": "56c04c9193a6dfcb9da2dd624b2b3af6aaa3ea0b",
+    "/main-es5.f65d4c5e0d90bb29b4e9.js": "dd202f8cdedae4d8cfb65db436762c4691726e03",
+    "/manifest.webmanifest": "95349bee4d26850317ef6f031f3d18578fa66710",
+    "/polyfills-es2015.690002c25ea8557bb4b0.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/polyfills-es5.9e286f6d9247438cbb02.js": "e51a1de4f016cd689dbdbef51043dec9518c4111",
+    "/runtime-es2015.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.0c6b0673fd77f71fb65c.css": "c332e968fee0158b2846e46428669d4bf83b6710"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
