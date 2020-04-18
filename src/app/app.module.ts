@@ -20,6 +20,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HomeComponent } from './shared/components/home/home.component';
 import { RouteNotFoundComponent } from './shared/components/route-not-found/route-not-found.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RouteNotFoundComponent } from './shared/components/route-not-found/rout
     MatCardModule,
     MatDividerModule,
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

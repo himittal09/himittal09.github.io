@@ -5,14 +5,39 @@
   <title>Himittal09</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link async rel="icon" type="image/x-icon" href="favicon.ico">
+  <link async rel="manifest" href="manifest.webmanifest">
+  <link async rel="apple-touch-icon" href="./assets/icons/icon-192x192.png">
+  <link rel="canonical" href="https://himittal09.github.io/"/>
   <meta name="theme-color" content="#1976d2">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="Description" content="Personal Portfolio website of Himanshu Mittal">
+  <link async href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="mat-typography">
+<body class="mat-typography my-theme">
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script>
+    const something = (function() {
+      let executed = false;
+      return function() {
+        if (!executed) {
+          executed = true;
+          let cl = document.body.classList;
+          if (window.localStorage.getItem('colorTheme') == 'night')
+          {
+            cl.add('my-dark-theme');
+            cl.remove('my-theme');
+          }
+          else
+          {
+            cl.add('my-theme');
+            cl.remove('my-dark-theme');
+          }
+        }
+      };
+    })();
+    something();
+  </script>
 </body>
 </html>

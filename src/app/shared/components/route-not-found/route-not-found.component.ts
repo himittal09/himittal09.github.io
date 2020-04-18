@@ -12,4 +12,5 @@ export class RouteNotFoundComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goHome () {}
 }
