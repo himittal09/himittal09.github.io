@@ -27,3 +27,11 @@
   flex-grow: 1;
   margin-left: auto;
 }
+
+mat-nav-list.horizontal-list {
+  a {
+    color: inherit;
+    background-color: inherit;
+    font-size: inherit;
+  }
+}

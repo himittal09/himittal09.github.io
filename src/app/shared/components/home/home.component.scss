@@ -69,7 +69,10 @@
   }
   
   .page-header {
-    min-height: 550px;
+    @media screen and (max-width: 450px) {
+      min-height: 550px;
+    }
+    min-height: 450px;
     padding: 0;
     position: relative;
     background-position: center center;
@@ -209,13 +212,8 @@
       color: #ea4134;
     }
   }
-  
-  .mat-display-1 {
-    margin-bottom: 30px;
-  }
-  
-  mat-card {
-    padding: 50px;
-  }
+}
 
+mat-tab-group {
+  max-width: 2000px;
 }

@@ -7,7 +7,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - development
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -36,5 +36,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.PROJECT_BUILD_TOKEN }}
-        BRANCH: master # The branch the action should deploy to.
-        FOLDER: dist # The folder the action should deploy.
+        BRANCH: development # The branch the action should deploy to.
+        FOLDER: dist/himittal09 # The folder the action should deploy.

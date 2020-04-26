@@ -10,6 +10,10 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
+
+	transition:
+		color 0.5s ease,
+		background-color 0.5s ease;
 }
 
 
@@ -141,6 +145,17 @@ $my-dark-theme: mat-dark-theme(
 );
 
 // // move the @include statement out to just apply it to whole webpage
+@media (prefers-color-scheme: dark) {
+	@include angular-material-theme($my-dark-theme);
+	@include home-component-theme($my-dark-theme);
+	img:not([src*=".svg"]) {
+		filter: grayscale(30%);
+	}
+}
+@media (prefers-color-scheme: light) {
+	@include angular-material-theme($my-theme);
+	@include home-component-theme($my-theme);
+}
 .my-theme {
 	@include angular-material-theme($my-theme);
 	@include home-component-theme($my-theme);
@@ -148,4 +163,7 @@ $my-dark-theme: mat-dark-theme(
 .my-dark-theme {
 	@include angular-material-theme($my-dark-theme);
 	@include home-component-theme($my-dark-theme);
+	img:not([src*=".svg"]) {
+		filter: grayscale(30%);
+	}
 }

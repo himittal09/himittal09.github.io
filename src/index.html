@@ -14,30 +14,8 @@
   <link async href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="mat-typography my-theme">
+<body class="mat-typography">
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
-  <script>
-    const something = (function() {
-      let executed = false;
-      return function() {
-        if (!executed) {
-          executed = true;
-          let cl = document.body.classList;
-          if (window.localStorage.getItem('colorTheme') == 'night')
-          {
-            cl.add('my-dark-theme');
-            cl.remove('my-theme');
-          }
-          else
-          {
-            cl.add('my-theme');
-            cl.remove('my-dark-theme');
-          }
-        }
-      };
-    })();
-    something();
-  </script>
 </body>
 </html>

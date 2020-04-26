@@ -1,0 +1,30 @@
+.project-tab-root {
+    padding: 30px;
+
+    *.mat-body {
+        cursor: default;
+    }
+
+    .project-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+    }
+    
+    .mat-display-2 {
+        margin-bottom: 20px;
+    }
+
+    mat-divider {
+        margin: 20px 0;
+    }
+    mat-icon {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    .grow_icon {
+        font-size: 200px;
+    }
+}

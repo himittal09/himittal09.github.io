@@ -5,11 +5,13 @@
       [opened]="false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item (click)="getResume()">Resume</a>
       <a mat-list-item href="#">About</a>
-      <a mat-list-item href="#">Blog</a>
-      <a mat-list-item href="#">Contact</a>
-      <a mat-list-item (click)="changeTheme()">Change Theme</a>
+      <a mat-list-item [routerLink]="['blog']">Blog</a>
+      <a mat-list-item [routerLink]="['contact']">Contact</a>
+      <a mat-list-item (click)="changeTheme()">
+        <mat-icon aria-hidden="false" svgIcon="sun_icon" *ngIf="!isDayTheme"></mat-icon>
+        <mat-icon aria-hidden="false" svgIcon="moon_icon" *ngIf="isDayTheme"></mat-icon>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,11 +27,13 @@
       <span><a [routerLink]="['/']">Himanshu Mittal</a></span>
       <span class="left-spacer"></span>
       <mat-nav-list class="horizontal-list" *ngIf="(isHandset$ | async) === false">
-        <a mat-list-item (click)="changeTheme()">Change Theme</a>
-        <a mat-list-item (click)="getResume()">Resume</a>
-        <a mat-list-item href="#">About</a>
-        <a mat-list-item href="#">Blog</a>
-        <a mat-list-item href="#">Contact</a>
+        <a mat-flat-button href="#">About</a>
+        <a mat-flat-button [routerLink]="['contact']">Contact</a>
+        <a mat-flat-button [routerLink]="['blog']">Blog</a>
+        <button mat-icon-button (click)="changeTheme()">
+          <mat-icon aria-hidden="false" svgIcon="sun_icon" *ngIf="!isDayTheme"></mat-icon>
+          <mat-icon aria-hidden="false" svgIcon="moon_icon" *ngIf="isDayTheme"></mat-icon>
+        </button>
       </mat-nav-list>
     </mat-toolbar>
     <ng-content></ng-content>

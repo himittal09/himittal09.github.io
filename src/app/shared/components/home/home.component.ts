@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       'StackOverflow_Icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stackoverflow.svg')
     );
-    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/bridge.jpg'})`);
+    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/b2.jpg'})`);
   }
 
   ngOnInit(): void {

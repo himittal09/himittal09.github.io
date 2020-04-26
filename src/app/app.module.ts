@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { environment } from '@environments/environment';
 
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,16 +18,28 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { HomeComponent } from './shared/components/home/home.component';
-import { RouteNotFoundComponent } from './shared/components/route-not-found/route-not-found.component';
-import { RouterModule } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { RouteNotFoundComponent } from '@components/route-not-found/route-not-found.component';
+import { HomeComponent } from '@components/home/home.component';
+import { NavbarComponent } from '@components/navbar/navbar.component';
+
+import { SharedModule } from './shared/shared.module';
+import { BlogModule } from './blog/blog.module';
+
+import { AngularFireModule } from '@angular/fire';
+
+import * as firebase from 'firebase/app';
+import { ContactModule } from './contact/contact.module';
+
+firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    RouteNotFoundComponent,
     HomeComponent,
-    RouteNotFoundComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +56,12 @@ import { RouterModule } from '@angular/router';
     MatDividerModule,
     HttpClientModule,
     MatTooltipModule,
-    RouterModule
+    RouterModule,
+    MatTabsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BlogModule,
+    SharedModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]

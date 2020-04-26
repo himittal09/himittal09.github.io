@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,25 +10,28 @@ export class SharedService {
 
   getResume (fileName: string): void {
     this.http.get('gs://portfolio-60c77.appspot.com/Resumes/' + fileName).subscribe({
-    next: (what) => console.log(what),
-    error: (error) => console.error(error),
-    complete: () => console.log('Completed')
+      next: (what) => console.log(what),
+      error: (error) => console.error(error),
+      complete: () => console.log('Completed')
     });
+  }
+
+  get isDayTheme (): boolean {
+    let cl: DOMTokenList = document.body.classList;
+    return !cl.contains('my-dark-theme');
   }
 
   toggleTheme () {
     let cl: DOMTokenList = document.body.classList;
-    if (window.localStorage.getItem('colorTheme') == 'day')
+    if (this.isDayTheme)
     {
       cl.add('my-dark-theme');
       cl.remove('my-theme');
-      window.localStorage.setItem('colorTheme', 'night');
     }
     else
     {
       cl.add('my-theme');
       cl.remove('my-dark-theme');
-      window.localStorage.setItem('colorTheme', 'day');
     }
   }
 }
