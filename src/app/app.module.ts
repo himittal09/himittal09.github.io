@@ -25,12 +25,10 @@ import { HomeComponent } from '@components/home/home.component';
 import { NavbarComponent } from '@components/navbar/navbar.component';
 
 import { SharedModule } from './shared/shared.module';
-import { BlogModule } from './blog/blog.module';
 
 import { AngularFireModule } from '@angular/fire';
 
 import * as firebase from 'firebase/app';
-import { ContactModule } from './contact/contact.module';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -59,9 +57,7 @@ firebase.initializeApp(environment.firebaseConfig);
     RouterModule,
     MatTabsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    BlogModule,
-    SharedModule,
-    ContactModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

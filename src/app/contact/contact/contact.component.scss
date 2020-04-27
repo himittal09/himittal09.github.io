@@ -1,0 +1,61 @@
+// @import "@material/layout-grid/mdc-layout-grid";
+
+// mdc-layout-grid -> equivalent to container
+// mdc-layout-grid__inner -> equivalent to row
+// mdc-layout-grid__cell -> equivalent to col-num
+// always mention span
+// It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+
+mat-card {
+  padding: 0;
+  border-radius: 0;
+  img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+  }
+  mat-card-header {
+    .mat-display-1 {
+      margin: 10px 0;
+    }
+  }
+  mat-card-content {
+    padding: 16px;
+    textarea {
+      resize: vertical;
+    }
+    mat-list-item {
+      mat-icon {
+        margin-right: 5px;
+      }
+      .mat-body {
+        cursor: default;
+      }
+    }
+    .asdf {
+      display: table;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      .line-container {
+        margin: 15px auto;
+        button {
+          box-shadow: none;
+          cursor: default;
+        }
+      }
+      .line-container:before,.line-container:after{
+        content:" ";
+        width: calc(50% - 40px);
+        height: 1px;
+        margin: 0 10px;
+        vertical-align: super;
+        background-color:grey;
+        display: inline-block;
+      }
+    }
+    .example-full-width {
+      width: 100%;
+    }
+  }
+}

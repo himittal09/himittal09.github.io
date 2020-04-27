@@ -1,8 +1,13 @@
+// @import "@material/layout-grid/mdc-layout-grid";
+
+// mdc-layout-grid -> equivalent to container
+// mdc-layout-grid__inner -> equivalent to row
+// mdc-layout-grid__cell -> equivalent to col-num
+
+// always mention span
+
+// It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+
 .mat-display-1 {
   margin-bottom: 30px;
-}
-
-.hostRow {
-  margin: 0;
-  padding: 30px;
 }

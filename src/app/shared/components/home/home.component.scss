@@ -1,5 +1,23 @@
 @import '~@angular/material/theming';
 
+
+
+// @import "@material/layout-grid/mdc-layout-grid";
+
+// mdc-layout-grid -> equivalent to container
+// mdc-layout-grid__inner -> equivalent to row
+// mdc-layout-grid__cell -> equivalent to col-num
+
+// always mention span
+
+// It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+
+
+
+
+
+
+
 @mixin home-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -44,31 +62,17 @@
     color: inherit;
   }
   
-  .button-container {
-    text-align: center;
-    margin-top: -106px;
-    a {
-      margin: 5px 1px;
-      margin-right: 8px;
-      button {
-        background-color: map-get($background, $key: raised-button) !important;
-        mat-icon {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-12px, -12px);
-          transform: translate(-12px, -12px);
-        }
-      }
-    }
-  }
-  
   img {
     max-width: 100%;
     border-radius: 1px;
   }
   
   .page-header {
+    .section {
+      padding: 70px 0;
+      position: relative;
+      padding-bottom: 0;
+    }
     @media screen and (max-width: 450px) {
       min-height: 550px;
     }
@@ -79,6 +83,25 @@
     background-size: cover;
     height: 60vh;
     background: rgba(44, 44, 44, 0.2);
+
+    .button-container {
+      text-align: center;
+      margin-top: -106px;
+      a {
+        margin: 5px 1px;
+        margin-right: 8px;
+        button {
+          background-color: map-get($background, $key: raised-button) !important;
+          mat-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-12px, -12px);
+            transform: translate(-12px, -12px);
+          }
+        }
+      }
+    }
     
     .page-header-image {
       position: absolute;
@@ -88,7 +111,7 @@
       height: 100%;
       z-index: -1;
     }
-    .container {
+    .containerex {
       height: 100%;
       text-align: center;
       position: relative;
@@ -117,8 +140,8 @@
               content: "";
               border: 15px solid rgba(mat-color($primary), 0.6);
               border-radius: 50%;
-              height: 180px;
-              width: 180px;
+              height: 160px;
+              width: 160px;
               position: absolute;
               left: 0;
               -webkit-animation: pulsate 1.6s ease-out;
@@ -142,8 +165,8 @@
           img {
             position: relative;
             border-radius: 50%;
-            height: 180px;
-            width: 180px;
+            height: 160px;
+            width: 160px;
             padding: 0;
             margin: 0;
             border: 15px solid transparent;
@@ -176,10 +199,15 @@
       background-color: rgba(0, 0, 0, 0.5);
     }
   }
-  .section {
-    padding: 70px 0;
-    position: relative;
-    padding-bottom: 0;
+
+  main.section {
+    padding-top: 70px;
+    mat-card {
+      // padding: 0;
+      mat-tab-group {
+        max-width: 2000px;
+      }
+    }
   }
   
   .btn-linkedin {
@@ -212,8 +240,4 @@
       color: #ea4134;
     }
   }
-}
-
-mat-tab-group {
-  max-width: 2000px;
 }

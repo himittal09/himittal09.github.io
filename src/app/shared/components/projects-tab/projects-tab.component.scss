@@ -1,30 +1,35 @@
-.project-tab-root {
-    padding: 30px;
+// @import "@material/layout-grid/mdc-layout-grid";
 
-    *.mat-body {
-        cursor: default;
-    }
+// mdc-layout-grid -> equivalent to container
+// mdc-layout-grid__inner -> equivalent to row
+// mdc-layout-grid__cell -> equivalent to col-num
 
-    .project-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100%;
-    }
-    
-    .mat-display-2 {
-        margin-bottom: 20px;
-    }
+// always mention span
 
-    mat-divider {
-        margin: 20px 0;
-    }
-    mat-icon {
-        vertical-align: middle;
-        margin-right: 5px;
-    }
+// It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
-    .grow_icon {
-        font-size: 200px;
-    }
+
+*.mat-body {
+    cursor: default;
+}
+.project-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.mat-display-2 {
+    margin-bottom: 20px;
+}
+mat-divider {
+    margin: 20px 0;
+}
+mat-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.grow_icon {
+    font-size: 200px;
 }

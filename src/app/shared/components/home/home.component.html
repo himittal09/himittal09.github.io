@@ -1,6 +1,7 @@
 <div class="page-header">
+  
   <div class="page-header-image" [style.background-image]="imageURL"></div>
-  <div class="container">
+  <div class="containerex">
     <div class="content-center">
       <div class="cc-profile-image"><a><img src="../../../../assets/pictures/me.jpg" alt="Image"/></a></div>
       <div class="mat-display-3">Himanshu Mittal</div>
@@ -11,7 +12,7 @@
   </div>
   
   <div class="section">
-    <div class="container">
+    <div class="containerex">
       <div class="button-container">
         <a href="https://github.com/himittal09" rel="noreferrer" target="_blank" aria-label="Github Profile of Himanshu Mittal" matTooltip="Github Profile of Himanshu Mittal">
           <button mat-fab>
@@ -44,33 +45,29 @@
 
 </div>
 
-<div class="section">
-  <div class="container">
-    <mat-card>
-      <main id="main">
-        <mat-tab-group mat-stretch-tabs color="primary" dynamicHeight>
-          <mat-tab label="Home">
-            <ng-template matTabContent>
-              <app-home-tab></app-home-tab>
-            </ng-template>
-          </mat-tab>
-          <mat-tab label="Projects">
-            <ng-template matTabContent>
-              <app-projects-tab></app-projects-tab>
-            </ng-template>
-          </mat-tab>
-          <mat-tab label="Key Expertise">
-            <ng-template matTabContent>
-              <app-expertise-tab></app-expertise-tab>
-            </ng-template>
-          </mat-tab>
-          <mat-tab label="Achievements">
-            <ng-template matTabContent>
-              <app-achievements-tab></app-achievements-tab>
-            </ng-template>
-          </mat-tab>
-        </mat-tab-group>
-      </main>
-    </mat-card>
-  </div>
-</div>
+<main id="main" class="section mdc-layout-grid">
+  <mat-card>
+    <mat-tab-group mat-stretch-tabs color="primary" dynamicHeight>
+      <mat-tab label="Home">
+        <ng-template matTabContent>
+          <app-home-tab></app-home-tab>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Projects">
+        <ng-template matTabContent>
+          <app-projects-tab></app-projects-tab>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Key Expertise">
+        <ng-template matTabContent>
+          <app-expertise-tab></app-expertise-tab>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Achievements">
+        <ng-template matTabContent>
+          <app-achievements-tab></app-achievements-tab>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</main>

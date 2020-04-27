@@ -1,1 +1,72 @@
-<p>contact works!</p>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet"></div>
+    <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-4-phone">
+      <mat-card>
+        <mat-card-header>
+          <div class="mat-display-1">Contact</div>
+        </mat-card-header>
+        <img src="../../../assets/pictures/contact-image.jpg" alt="A bridge">
+        <mat-card-content>
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-2-desktop"></div>
+            <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+              <mat-list>
+                <mat-list-item>
+                  <mat-icon aria-hidden="true" aria-label="Email Icon">email</mat-icon>
+                  <div class="mat-line mat-body">himittal09@gmail.com</div>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon aria-hidden="true" aria-label="Phone Icon">phone</mat-icon>
+                  <div class="mat-line mat-body">+91-81037-55186</div>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon aria-hidden="true" aria-label="Address Icon">home</mat-icon>
+                  <div class="mat-line mat-body">Maa Sharda Traders, Janjgir, Janjgir-Champa, 495668</div>
+                </mat-list-item>
+              </mat-list>
+              <div class="asdf">
+                <div class="line-container">
+                  <button mat-mini-fab color="accent" aria-hidden="true" [disableRipple]="true">OR</button>
+                </div>
+              </div>
+              <form #queryform="ngForm" (ngSubmit)="onSubmit(queryform)">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Name</mat-label>
+                  <input matInput
+                        type="text"
+                        required
+                        maxlength="100"
+                        ngModel
+                        name="name">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Email</mat-label>
+                  <input matInput
+                        type="email"
+                        required
+                        maxlength="100"
+                        ngModel
+                        name="email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Enter Note</mat-label>
+                  <textarea matInput
+                            placeholder="Ex. My query was regarding..."
+                            required
+                            maxlength="1000"
+                            ngModel
+                            name="query"
+                            cdkTextareaAutosize
+                            cdkAutosizeMinRows="5"
+                            cdkAutosizeMaxRows="15"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
