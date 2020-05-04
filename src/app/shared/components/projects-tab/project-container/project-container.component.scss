@@ -1,0 +1,28 @@
+// div {
+//   display: inline;
+// }
+
+*.mat-body {
+  cursor: default;
+}
+
+.project-title {
+  margin-bottom: 10px;
+  mat-icon {
+      margin-right: 10px;
+  }
+  .project-icon {
+      vertical-align: top;
+      height: 48px;
+      width: 48px;
+      img {
+        height: 48px;
+        width: 48px;
+      }
+  }
+}
+
+.mat-display-2 {
+  margin-bottom: 20px;
+  overflow: hidden;
+}

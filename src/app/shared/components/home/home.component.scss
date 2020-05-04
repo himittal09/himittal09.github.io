@@ -26,37 +26,6 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  @-webkit-keyframes pulsate {
-    0% {
-      -webkit-transform: scale(0.6, 0.6);
-      transform: scale(0.6, 0.6);
-      opacity: 0.0;
-    }
-    50% {
-      opacity: 1.0;
-    }
-    100% {
-      -webkit-transform: scale(1, 1);
-      transform: scale(1, 1);
-      opacity: 0.0;
-    }
-  }
-  @keyframes pulsate {
-    0% {
-      -webkit-transform: scale(0.6, 0.6);
-      transform: scale(0.6, 0.6);
-      opacity: 0.0;
-    }
-    50% {
-      opacity: 1.0;
-    }
-    100% {
-      -webkit-transform: scale(1, 1);
-      transform: scale(1, 1);
-      opacity: 0.0;
-    }
-  }
-  
   a {
     text-decoration: none;
     color: inherit;
@@ -64,7 +33,6 @@
   
   img {
     max-width: 100%;
-    border-radius: 1px;
   }
   
   .page-header {
@@ -134,34 +102,7 @@
           width: 140px;
         }
         .cc-profile-image {
-          a {
-            position: relative;
-            &:before {
-              content: "";
-              border: 15px solid rgba(mat-color($primary), 0.6);
-              border-radius: 50%;
-              height: 160px;
-              width: 160px;
-              position: absolute;
-              left: 0;
-              -webkit-animation: pulsate 1.6s ease-out;
-              animation: pulsate 1.6s ease-out;
-              -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-              opacity: 0.0;
-              z-index: 2;
-            }
-            &:hover {
-              img {
-                -webkit-transform: scale(1.06, 1.06);
-                transform: scale(1.06, 1.06);
-              }
-              &:before {
-                -webkit-animation: none;
-                animation: none;
-              }
-            }
-          }
+          position: relative;
           img {
             position: relative;
             border-radius: 50%;
@@ -169,10 +110,13 @@
             width: 160px;
             padding: 0;
             margin: 0;
-            border: 15px solid transparent;
             z-index: 2;
             -webkit-transition: all .3s ease-out;
             transition: all .3s ease-out;
+            &:hover {
+              -webkit-transform: scale(1.06, 1.06);
+              transform: scale(1.06, 1.06);
+            }
           }
         }
       }

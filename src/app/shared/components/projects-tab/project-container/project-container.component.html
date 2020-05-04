@@ -1,0 +1,42 @@
+<mat-card>
+
+  <div class="mdc-layout-grid__inner project-title">
+    
+    <div class="mdc-layout-grid__cell--span-1-desktop"></div>
+    <div class="mdc-layout-grid__cell--span-11-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+      <span class="project-icon">
+        <div *ngIf="iconType === 'svg'; then svgBlock else pngBlock"></div>
+        <ng-template #svgBlock>
+          <mat-icon aria-hidden="true" [inline]="true" svgIcon="{{iconName}}"></mat-icon>
+        </ng-template>
+        <ng-template #pngBlock>
+          <img src="../../../../assets/icons/{{iconName}}.png" alt="My Icon">
+        </ng-template>
+      </span>
+      <a class="mat-display-2" href="{{projectLink}}" rel="noreferrer" target="_blank">{{projectTitle}}</a>
+    </div>
+
+    <div class="mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet"></div>
+    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+      <div class="mat-body" matTooltip="Repository Stars">
+        <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>{{starCount}}</span>
+      </div>
+    </div>
+    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+      <div class="mat-body" matTooltip="Repository Forks">
+        <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon><span>{{forkCount}}</span>
+      </div>
+    </div>
+
+    <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+      <div class="mat-body">{{description}}</div>
+    </div>
+    <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+      <div class="mat-body"><strong>Project Type:</strong> {{projectType}}</div>
+      <div class="mat-body"><strong>Made During:</strong> {{madeDuring}}</div>
+      <div class="mat-body"><strong>Stack:</strong> {{projectStack}}</div>
+    </div>
+  </div>
+  
+</mat-card>
+

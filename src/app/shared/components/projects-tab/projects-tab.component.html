@@ -1,151 +1,59 @@
 <div class="mdc-layout-grid">
   
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-display-2">
-            <a href="https://github.com/himittal09/mca-II-project" rel="noreferrer" target="_blank" aria-label="">MCA-II-Project</a>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Stars">
-            <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>0</span>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Forks">
-            <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon> 0
-          </div>
-        </div>
-      </div>
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body">Short Description That goes here</div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body"><strong>Project Type:</strong> C++ console based application</div>
-          <div class="mat-body"><strong>Made During:</strong> MCA II</div>
-          <div class="mat-body"><strong>Stack:</strong> C++</div>
-        </div>
-      </div>
-    </div>
-    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone  project-icon">
-      <mat-icon aria-hidden="true" [inline]="true" aria-label="Hackerrank Icon" svgIcon="productivity_tracker_icon"></mat-icon>
-    </div>
-  </div>
+  <app-project-container
+    projectTitle="Productivity Tracker"
+    projectLink="https://github.com/himittal09/mca-II-project"
+    starCount="0"
+    forkCount="0"
+    description="Here Goes some descrription"
+    iconName="productivity_tracker_icon"
+    iconType="svg"
+    projectType="C++ console based application"
+    madeDuring="MCA II"
+    projectStack="C++"
+    class="itemcontainer">
+  </app-project-container>
 
-  <mat-divider [inset]="true"></mat-divider>
+  <app-project-container
+    projectTitle="Exam Analysis System"
+    projectLink="https://github.com/himittal09/Final-Year-Project"
+    starCount="0"
+    forkCount="0"
+    description="Here Goes some descrription"
+    iconName="exam_analysis_icon"
+    iconType="svg"
+    projectType="C++ console based application"
+    madeDuring="MCA II"
+    projectStack="C++"
+    class="itemcontainer">
+  </app-project-container>
 
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-display-2">
-            <a href="https://github.com/himittal09/Final-Year-Project" rel="noreferrer" target="_blank" aria-label="">Final Year Project</a>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Stars">
-            <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>0</span>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Forks">
-            <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon> 0
-          </div>
-        </div>
-      </div>
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body">Short Description That goes here</div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body"><strong>Project Type:</strong> C++ console based application</div>
-          <div class="mat-body"><strong>Made During:</strong> MCA II</div>
-          <div class="mat-body"><strong>Stack:</strong> C++</div>
-        </div>
-      </div>
-    </div>
-    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone  project-icon">
-      <mat-icon aria-hidden="true" [inline]="true" aria-label="Hackerrank Icon" svgIcon="exam_analysis_icon"></mat-icon>
-    </div>
-  </div>
+  <app-project-container
+    projectTitle="Himanshu Portfolio"
+    projectLink="https://github.com/himittal09/himittal09.github.io"
+    starCount="0"
+    forkCount="0"
+    description="Here Goes some descrription"
+    iconName="icon-512x512"
+    iconType="png"
+    projectType="C++ console based application"
+    madeDuring="MCA II"
+    projectStack="MEAN"
+    class="itemcontainer">
+  </app-project-container>
 
-  <mat-divider [inset]="true"></mat-divider>
-
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-display-2">
-            <a href="https://github.com/himittal09/himittal09.github.io" rel="noreferrer" target="_blank" aria-label="">This website</a>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Stars">
-            <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>0</span>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Forks">
-            <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon> 0
-          </div>
-        </div>
-      </div>
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body">Short Description That goes here</div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body"><strong>Project Type:</strong> C++ console based application</div>
-          <div class="mat-body"><strong>Made During:</strong> MCA II</div>
-          <div class="mat-body"><strong>Stack:</strong> C++</div>
-        </div>
-      </div>
-    </div>
-    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone  project-icon">
-      <img src="../../../../assets/icons/icon-512x512.png" alt="My Icon">
-    </div>
-  </div>
-
-  <mat-divider [inset]="true"></mat-divider>
-
-  <div class="mdc-layout-grid__inner">
-    <div class="mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-display-2">
-            <a href="https://github.com/himittal09/node-chat-app" rel="noreferrer" target="_blank" aria-label="">Node Chat App</a>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Stars">
-            <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>0</span>
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body" matTooltip="Repository Forks">
-            <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon> 0
-          </div>
-        </div>
-      </div>
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body">Short Description That goes here</div>
-        </div>
-        <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mat-body"><strong>Project Type:</strong> C++ console based application</div>
-          <div class="mat-body"><strong>Made During:</strong> MCA II</div>
-          <div class="mat-body"><strong>Stack:</strong> C++</div>
-        </div>
-      </div>
-    </div>
-    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone  project-icon">
-      <div class="project-icon grow-icon">
-        <mat-icon aria-hidden="true" [inline]="true" aria-label="Hackerrank Icon" svgIcon="chat_icon"></mat-icon>
-      </div>
-    </div>
-  </div>
+  <app-project-container
+    projectTitle="Node Chat App"
+    projectLink="https://github.com/himittal09/node-chat-app"
+    starCount="0"
+    forkCount="0"
+    description="Here Goes some descrription"
+    iconName="chat_icon"
+    iconType="svg"
+    projectType="C++ console based application"
+    madeDuring="MCA II"
+    projectStack="C++"
+    class="itemcontainer">
+  </app-project-container>
 
 </div>

@@ -3,7 +3,7 @@
   <div class="page-header-image" [style.background-image]="imageURL"></div>
   <div class="containerex">
     <div class="content-center">
-      <div class="cc-profile-image"><a><img src="../../../../assets/pictures/me.jpg" alt="Image"/></a></div>
+      <div class="cc-profile-image"><img src="../../../../assets/pictures/me.jpg" alt="Image"/></div>
       <div class="mat-display-3">Himanshu Mittal</div>
       <div class="mat-title">Developer, Student, Geek</div>
       <button type="button" mat-flat-button color="primary">Hire me</button>
@@ -47,23 +47,23 @@
 
 <main id="main" class="section mdc-layout-grid">
   <mat-card>
-    <mat-tab-group mat-stretch-tabs color="primary" dynamicHeight>
-      <mat-tab label="Home">
+    <mat-tab-group mat-stretch-tabs color="primary" dynamicHeight [(selectedIndex)]="selectedTabID" (selectedIndexChange)="changeID()">
+      <mat-tab label="Home" id="home">
         <ng-template matTabContent>
           <app-home-tab></app-home-tab>
         </ng-template>
       </mat-tab>
-      <mat-tab label="Projects">
+      <mat-tab label="Projects" id="projects">
         <ng-template matTabContent>
           <app-projects-tab></app-projects-tab>
         </ng-template>
       </mat-tab>
-      <mat-tab label="Key Expertise">
+      <mat-tab label="Key Expertise" id="expertise">
         <ng-template matTabContent>
           <app-expertise-tab></app-expertise-tab>
         </ng-template>
       </mat-tab>
-      <mat-tab label="Achievements">
+      <mat-tab label="Achievements" id="achievements">
         <ng-template matTabContent>
           <app-achievements-tab></app-achievements-tab>
         </ng-template>
