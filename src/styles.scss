@@ -1,10 +1,13 @@
 @import "@material/layout-grid/mdc-layout-grid";
+@import "./assets/css/bootstrap-grid.scss";
+@Import "./assets/css/bootstrap.scss";
 
 html {
 	height: 100%;
 	box-sizing: border-box;
 	font-display: swap !important;
 }
+
 body {
 	height: 100vh;
 	box-sizing: border-box;
@@ -16,6 +19,18 @@ body {
 		background-color 0.5s ease;
 }
 
+mat-card {
+	border-radius: 0 !important;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
 
 @import '~@angular/material/theming';
 @import 'app/shared/components/home/home.component';
@@ -48,7 +63,7 @@ $mat-light-theme-background: (
   );
   
   // Background palette for dark themes.
-  $mat-dark-theme-background: (
+$mat-dark-theme-background: (
 	status-bar: black,
 	app-bar:    map_get($mat-grey, 900),
 	background: #303030,
@@ -142,14 +157,14 @@ mat-card {
 // create theme (use mat-dark-theme for themes with dark backgrounds)
 // light being my default
 $my-theme: mat-light-theme(
-    $my-theme-primary,
-    $my-theme-accent,
-    $my-theme-warn
+	$my-theme-primary,
+	$my-theme-accent,
+	$my-theme-warn
 );
 $my-dark-theme: mat-dark-theme(
 	$my-theme-primary,
-    $my-theme-accent,
-    $my-theme-warn
+	$my-theme-accent,
+	$my-theme-warn
 );
 
 // // move the @include statement out to just apply it to whole webpage

@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'himittal09';
 }
+
+// see following for cors configuration for downloading resumes
+// https://firebase.google.com/docs/storage/web/download-files

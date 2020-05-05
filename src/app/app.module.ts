@@ -26,9 +26,9 @@ import { NavbarComponent } from '@components/navbar/navbar.component';
 
 import { SharedModule } from './shared/shared.module';
 
-import { AngularFireModule } from '@angular/fire';
-
 import * as firebase from 'firebase/app';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 firebase.initializeApp(environment.firebaseConfig);
 
@@ -56,8 +56,9 @@ firebase.initializeApp(environment.firebaseConfig);
     MatTooltipModule,
     RouterModule,
     MatTabsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    SharedModule
+    SharedModule,
+    MatProgressBarModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

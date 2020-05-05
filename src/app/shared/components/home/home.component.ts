@@ -3,6 +3,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 import { MatIconRegistry } from '@angular/material/icon';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from '@app/shared/services/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private matIconRegisty: MatIconRegistry,
               private domSanitizer: DomSanitizer,
+              private service: SharedService,
               private route: ActivatedRoute) {
     this.matIconRegisty.addSvgIcon(
       'GitHub_Icon',
@@ -33,7 +35,7 @@ export class HomeComponent implements OnInit {
       'StackOverflow_Icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stackoverflow.svg')
     );
-    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/b2.jpg'})`);
+    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/background_arch.jpg'})`);
   }
 
 /**
@@ -66,6 +68,32 @@ export class HomeComponent implements OnInit {
 
   ngOnDestroy () {
     // remove the fragment on destroy
+  }
+
+  getResume () {
+    const resumeName = 'Internshala-Himanshu_Mittal';
+
+    this.service.getResume(resumeName).then((obj: Blob) => {
+      let blob = obj;
+      let url = window.URL.createObjectURL(blob);
+
+      // yo can choose any or both options from below
+
+      // option 1: pop open in browser
+      let pwa = window.open(url);
+      if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
+        alert( 'Please disable your Pop-up blocker and try again.');
+      }
+
+      // option 2: download in device
+      let downloadLink: HTMLAnchorElement = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = `${resumeName}.pdf`;
+      downloadLink.click();
+
+    }).catch((error) => {
+      console.log(error);
+    });
   }
   
 

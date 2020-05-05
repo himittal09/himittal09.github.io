@@ -13,7 +13,7 @@
           <img src="../../../../assets/icons/{{iconName}}.png" alt="My Icon">
         </ng-template>
       </span>
-      <a class="mat-display-2" href="{{projectLink}}" rel="noreferrer" target="_blank">{{projectTitle}}</a>
+      <a class="mat-display-2" href="{{projectGithubLink}}" rel="noreferrer" target="_blank">{{projectTitle}}</a>
     </div>
 
     <div class="mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet"></div>
@@ -32,8 +32,8 @@
       <div class="mat-body">{{description}}</div>
     </div>
     <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-      <div class="mat-body"><strong>Project Type:</strong> {{projectType}}</div>
-      <div class="mat-body"><strong>Made During:</strong> {{madeDuring}}</div>
+      <div class="mat-body"><strong>Project Type:</strong> {{shortDescription}}</div>
+      <div class="mat-body"><strong>Made During:</strong> {{madeFor}}</div>
       <div class="mat-body"><strong>Stack:</strong> {{projectStack}}</div>
     </div>
   </div>

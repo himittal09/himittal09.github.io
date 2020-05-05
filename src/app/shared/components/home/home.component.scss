@@ -1,24 +1,7 @@
 @import '~@angular/material/theming';
 
-
-
-// @import "@material/layout-grid/mdc-layout-grid";
-
-// mdc-layout-grid -> equivalent to container
-// mdc-layout-grid__inner -> equivalent to row
-// mdc-layout-grid__cell -> equivalent to col-num
-
-// always mention span
-
-// It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
-
-
-
-
-
-
-
 @mixin home-component-theme($theme) {
+  
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
@@ -26,131 +9,91 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  .container {
+    padding-top: 0;
   }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  .page-header {
-    .section {
-      padding: 70px 0;
-      position: relative;
-      padding-bottom: 0;
-    }
-    @media screen and (max-width: 450px) {
-      min-height: 550px;
-    }
-    min-height: 450px;
-    padding: 0;
-    position: relative;
-    background-position: center center;
-    background-size: cover;
-    height: 60vh;
-    background: rgba(44, 44, 44, 0.2);
 
-    .button-container {
-      text-align: center;
-      margin-top: -106px;
-      a {
-        margin: 5px 1px;
-        margin-right: 8px;
-        button {
-          background-color: map-get($background, $key: raised-button) !important;
-          mat-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-12px, -12px);
-            transform: translate(-12px, -12px);
-          }
+  .page-header-image {
+    width: 100%;
+    z-index: -1;
+    height: 200px;
+    position: relative;
+    object-fit: cover;
+  }
+
+  .info-card-container {
+    margin-top: -100px !important;
+    mat-card {
+      mat-card-header {
+        display: block !important;
+        * {
+          text-align: center;
         }
-      }
-    }
-    
-    .page-header-image {
-      position: absolute;
-      background-size: cover;
-      background-position: center center;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    .containerex {
-      height: 100%;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      .content-center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        padding: 0 15px;
-        color: white;
-        width: 100%;
-        max-width: 880px;
-        .mat-display-3 {
-          margin-bottom: 10px;
+        .mat-h2, .mat-h3, .mat-h4 {
+          padding: 0;
+          margin: 0;
         }
-        button {
-          margin: 5px 2px;
-          width: 140px;
+        span > * {
+          vertical-align: middle;
         }
-        .cc-profile-image {
-          position: relative;
+        a mat-icon {
+          margin: 0 5px;
+        }
+        .name {
+          font-weight: 600;
+        }
+        .location {
+          padding: 7px 0;
+        }
+        .social {
+          padding: 10px 0;
+        }
+        .profile-image-section {
+          margin-top: -75px;
           img {
-            position: relative;
             border-radius: 50%;
+            border: 3px solid map-get($map: $background, $key: card); // make border as per theme
             height: 160px;
             width: 160px;
-            padding: 0;
-            margin: 0;
-            z-index: 2;
-            -webkit-transition: all .3s ease-out;
-            transition: all .3s ease-out;
-            &:hover {
-              -webkit-transform: scale(1.06, 1.06);
-              transform: scale(1.06, 1.06);
-            }
           }
         }
       }
-    }
-    &:after {
-      position: absolute;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      left: 0;
-      top: 0;
-      content: "";
-    }
-    &:before {
-      position: absolute;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      left: 0;
-      top: 0;
-      content: "";
-      background-color: rgba(0, 0, 0, 0.5);
+      .mat-divider-inset {
+        margin: 16px 0 !important;
+      }
+      
+      mat-card-content {
+        div.mat-h2 {
+          margin-bottom: 5px;
+        }
+        .mat-progress-bar {
+          height: 10px;
+        }
+        .expertise-item {
+          padding: 3px 0;
+        }
+        span.text {
+          display: inline-block;
+          width: 100px;
+        }
+        mat-progress-bar {
+          display: inline-block;
+          width: calc(100% - 100px);
+        }
+        mat-chip-list {
+          mat-chip {
+            margin-top: 10px;
+          }
+        }
+      }  
     }
   }
 
-  main.section {
-    padding-top: 70px;
-    mat-card {
-      // padding: 0;
-      mat-tab-group {
-        max-width: 2000px;
-      }
+
+    
+  mat-card {
+    mat-tab-group {
+      max-width: 2000px;
     }
   }
   

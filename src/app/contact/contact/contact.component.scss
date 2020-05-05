@@ -1,14 +1,5 @@
-// @import "@material/layout-grid/mdc-layout-grid";
-
-// mdc-layout-grid -> equivalent to container
-// mdc-layout-grid__inner -> equivalent to row
-// mdc-layout-grid__cell -> equivalent to col-num
-// always mention span
-// It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
-
 mat-card {
   padding: 0;
-  border-radius: 0;
   img {
     width: 100%;
     max-height: 150px;
@@ -48,14 +39,21 @@ mat-card {
         content:" ";
         width: calc(50% - 40px);
         height: 1px;
-        margin: 0 10px;
+        margin: 0;
         vertical-align: super;
         background-color:grey;
         display: inline-block;
       }
+      .line-container:before {
+        margin-right: 10px;
+      }
+      .line-container:after {
+        margin-left: 10px;
+      }
     }
     .example-full-width {
       width: 100%;
+      max-width: 1000px;
     }
   }
 }
