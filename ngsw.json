@@ -1,0 +1,120 @@
+{
+  "configVersion": 1,
+  "timestamp": 1588683301448,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/blog-blog-module-es2015.594424733a618cd4977c.js",
+        "/blog-blog-module-es5.594424733a618cd4977c.js",
+        "/contact-contact-module-es2015.a2378c1bc4b4c82f6fcd.js",
+        "/contact-contact-module-es5.a2378c1bc4b4c82f6fcd.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.ed7cd9248db101a3ef73.js",
+        "/main-es5.ed7cd9248db101a3ef73.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.b1b4539dab1840335945.js",
+        "/polyfills-es5.00bf4678c5b9e69f1a03.js",
+        "/runtime-es2015.653020c7eff07aaf4574.js",
+        "/runtime-es5.653020c7eff07aaf4574.js",
+        "/styles.5ece82b16208f88cab57.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/css/bootstrap-grid.scss",
+        "/assets/css/bootstrap.scss",
+        "/assets/icons/chat_icon.svg",
+        "/assets/icons/exam_analysis_icon.svg",
+        "/assets/icons/github.svg",
+        "/assets/icons/hackerrank.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/linkedin.svg",
+        "/assets/icons/moon_icon.svg",
+        "/assets/icons/productivity_tracker.svg",
+        "/assets/icons/stackoverflow.svg",
+        "/assets/icons/sun_icon.svg",
+        "/assets/json/cors.json",
+        "/assets/pictures/b2.jpg",
+        "/assets/pictures/background_arch.jpg",
+        "/assets/pictures/contact-image.jpg",
+        "/assets/pictures/me.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/css/bootstrap-grid.scss": "1383fcbea9c52e7061042c8544d848056abfe131",
+    "/assets/css/bootstrap.scss": "97bb4af5fa3badf92a4f52fe22d557ee8570f933",
+    "/assets/icons/chat_icon.svg": "dafbc322136611be88552a3c7284bf4b58da028e",
+    "/assets/icons/exam_analysis_icon.svg": "3aa03550a999a4d92c8795bfe2a4ce54c0699a9d",
+    "/assets/icons/github.svg": "090b06c620b1ff2b8523b0a9b710f434323922eb",
+    "/assets/icons/hackerrank.svg": "0d889c401e7e5cc1fe7fd37a602426e5a646bbb2",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/linkedin.svg": "440c00e88b491a4bf94fa0300f427c593fa7689c",
+    "/assets/icons/moon_icon.svg": "c8f0ec63cf1064ece7e01e12a210087770ba483c",
+    "/assets/icons/productivity_tracker.svg": "6739d824148206693508f5c0099051d947b574df",
+    "/assets/icons/stackoverflow.svg": "c2510543c5a631bd83aebac30bdc3636f6fb1d55",
+    "/assets/icons/sun_icon.svg": "6558887f8e8ad78d7f0461805024783ea1e47e79",
+    "/assets/json/cors.json": "97eb9c02348186a31d41cceb6d695609deaa65c5",
+    "/assets/pictures/b2.jpg": "899178b18bab22e1a8990684a5c6837f9b9cf739",
+    "/assets/pictures/background_arch.jpg": "fae60c53d9e74ab584b73b4b5c2c5865643b35f1",
+    "/assets/pictures/contact-image.jpg": "c3059f0ae2b416511f09eb08d7137f0a74263638",
+    "/assets/pictures/me.jpg": "6494d53e3aa2c4bc91cea9da7e1eee5c1c1262c3",
+    "/blog-blog-module-es2015.594424733a618cd4977c.js": "a12b6fe6957085aa670d5d6b85a36965622bcce6",
+    "/blog-blog-module-es5.594424733a618cd4977c.js": "db4b8280a7b93e6baa75eba5757906c01c5ea87c",
+    "/contact-contact-module-es2015.a2378c1bc4b4c82f6fcd.js": "6597ba24ee6a5dbc91c1debe388370c5a3318c9b",
+    "/contact-contact-module-es5.a2378c1bc4b4c82f6fcd.js": "0928820e1f5e8c8352137acb2dd48ba8821cfe10",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "0ec247500126dbd45756bbeca5766bb56f86ac1e",
+    "/main-es2015.ed7cd9248db101a3ef73.js": "d0bd5adb71ffb30530df1d6c1aff5340c7c4e6f5",
+    "/main-es5.ed7cd9248db101a3ef73.js": "6652ac9c9479f11713aae6877d11d8fa2936c427",
+    "/manifest.webmanifest": "95349bee4d26850317ef6f031f3d18578fa66710",
+    "/polyfills-es2015.b1b4539dab1840335945.js": "c6df5256b53226df1d997d0b146fad0da7c48be3",
+    "/polyfills-es5.00bf4678c5b9e69f1a03.js": "f559fc3537d1f92791203fc3b16683cfaf283f2c",
+    "/runtime-es2015.653020c7eff07aaf4574.js": "de6bbf5196b2f6e575b9efec2f9f7098312baf49",
+    "/runtime-es5.653020c7eff07aaf4574.js": "90a8970ddbe77818d52d1eb8137c1919d9af9a4a",
+    "/styles.5ece82b16208f88cab57.css": "6c8dcb4db15b7ec0e1a6ab9d72d0d5e570587995"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
