@@ -73,27 +73,39 @@ export class HomeComponent implements OnInit {
   getResume () {
     const resumeName = 'Internshala-Himanshu_Mittal';
 
-    this.service.getResume(resumeName).then((obj: Blob) => {
-      let blob = obj;
-      let url = window.URL.createObjectURL(blob);
+    this.service.getResumeLink(resumeName).then((link) => {
 
-      // yo can choose any or both options from below
-
-      // option 1: pop open in browser
-      let pwa = window.open(url);
+      let pwa = window.open(link);
       if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
         alert( 'Please disable your Pop-up blocker and try again.');
       }
 
-      // option 2: download in device
-      let downloadLink: HTMLAnchorElement = document.createElement('a');
-      downloadLink.href = url;
-      downloadLink.download = `${resumeName}.pdf`;
-      downloadLink.click();
-
     }).catch((error) => {
       console.log(error);
     });
+
+    // this.service.getResume(resumeName).then((obj: Blob) => {
+    //   let blob = obj;
+    //   let url = window.URL.createObjectURL(blob);
+
+    //   // yo can choose any or both options from below
+
+    //   // option 1: pop open in browser
+    //   let pwa = window.open(url);
+    //   if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
+    //     alert( 'Please disable your Pop-up blocker and try again.');
+    //   }
+
+    //   // option 2: download in device
+    //   let downloadLink: HTMLAnchorElement = document.createElement('a');
+    //   downloadLink.href = url;
+    // downloadLink.target = '_blank';
+    //   downloadLink.download = `${resumeName}.pdf`;
+    //   downloadLink.click();
+
+    // }).catch((error) => {
+    //   console.log(error);
+    // });
   }
   
 

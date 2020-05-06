@@ -1,6 +1,4 @@
-@import "@material/layout-grid/mdc-layout-grid";
 @import "./assets/css/bootstrap-grid.scss";
-@Import "./assets/css/bootstrap.scss";
 
 html {
 	height: 100%;
@@ -19,6 +17,10 @@ body {
 		background-color 0.5s ease;
 }
 
+div {
+	transition: all 0.5s ease;
+}
+
 mat-card {
 	border-radius: 0 !important;
 }
@@ -33,7 +35,7 @@ img {
 }
 
 @import '~@angular/material/theming';
-@import 'app/shared/components/home/home.component';
+@import 'app/home/home.component';
 
 @include mat-core();
 
@@ -143,16 +145,6 @@ $mat-dark-theme-background: (
   );
 }
 */
-
-$columns: (
-  desktop: 12,
-  tablet: 12,
-  phone: 12
-);
-
-mat-card {
-	@include mat-elevation(2);
-}
 
 // create theme (use mat-dark-theme for themes with dark backgrounds)
 // light being my default

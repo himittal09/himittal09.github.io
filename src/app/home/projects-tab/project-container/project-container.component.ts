@@ -39,4 +39,16 @@ export class ProjectContainerComponent {
   
   // mention either employer or semester if learning
   @Input() madeFor: string;
+
+  // when did project development start
+  @Input() developmentStartDate?: Date;
+
+  // when did project development end
+  @Input() developmentEndDate?: Date;
+
+  // is project under development
+  @Input() isUnderDevelopment: boolean;
+
+  // to show project in website or not
+  @Input() toShow?: boolean;
 }

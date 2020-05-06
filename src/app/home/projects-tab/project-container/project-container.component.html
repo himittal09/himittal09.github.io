@@ -1,9 +1,8 @@
 <mat-card>
 
-  <div class="mdc-layout-grid__inner project-title">
+  <div class="row project-title">
     
-    <div class="mdc-layout-grid__cell--span-1-desktop"></div>
-    <div class="mdc-layout-grid__cell--span-11-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+    <div class=".offset-lg-1 col-lg-11 col-md-12">
       <span class="project-icon">
         <div *ngIf="iconType === 'svg'; then svgBlock else pngBlock"></div>
         <ng-template #svgBlock>
@@ -16,25 +15,30 @@
       <a class="mat-display-2" href="{{projectGithubLink}}" rel="noreferrer" target="_blank">{{projectTitle}}</a>
     </div>
 
-    <div class="mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet"></div>
-    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+    <div class="offset-lg-4 offset-md-4 col-lg-2 col-sm-6 col-md-3">
       <div class="mat-body" matTooltip="Repository Stars">
         <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>{{starCount}}</span>
       </div>
     </div>
-    <div class="mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-2-phone">
+    <div class="col-lg-2 col-sm-6 col-md-3">
       <div class="mat-body" matTooltip="Repository Forks">
         <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon><span>{{forkCount}}</span>
       </div>
     </div>
 
-    <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+    <div class="col-lg-6 col-md-12">
       <div class="mat-body">{{description}}</div>
     </div>
-    <div class="mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+    <div class="col-lg-6 col-md-12">
       <div class="mat-body"><strong>Project Type:</strong> {{shortDescription}}</div>
       <div class="mat-body"><strong>Made During:</strong> {{madeFor}}</div>
-      <div class="mat-body"><strong>Stack:</strong> {{projectStack}}</div>
+      <div class="mat-body">
+        <strong>Stack:</strong>
+        <mat-chip-list>
+          <mat-chip *ngFor="let item of projectStack">{{item}}</mat-chip>
+        </mat-chip-list>
+        <!-- {{projectStack}} -->
+      </div>
     </div>
   </div>
   

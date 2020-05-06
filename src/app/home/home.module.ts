@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+import { HomeTabComponent } from '@app/home/home-tab/home-tab.component';
+import { ProjectsTabComponent } from '@app/home/projects-tab/projects-tab.component';
+import { AchievementsTabComponent } from '@app/home/achievements-tab/achievements-tab.component';
+import { ProjectContainerComponent } from '@app/home/projects-tab/project-container/project-container.component';
+import { HomeComponent } from '@app/home/home.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -13,18 +20,32 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { RouteNotFoundComponent } from '@components/route-not-found/route-not-found.component';
-import { NavbarComponent } from '@components/navbar/navbar.component'
-import { RouterModule } from '@angular/router';
+export const homeRoutes: Routes = [
+  {
+    path: 'home',
+    component: HomeTabComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsTabComponent
+  },
+  {
+    path: 'achievements',
+    component: AchievementsTabComponent
+  }
+];
 
 @NgModule({
   declarations: [
-    RouteNotFoundComponent,
-    NavbarComponent
+    HomeTabComponent,
+    ProjectsTabComponent,
+    AchievementsTabComponent,
+    ProjectContainerComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forChild(homeRoutes),
     MatIconModule,
     MatDividerModule,
     MatTooltipModule,
@@ -38,8 +59,7 @@ import { RouterModule } from '@angular/router';
     MatTabsModule
   ],
   exports: [
-    RouteNotFoundComponent,
-    NavbarComponent
+    HomeComponent
   ]
 })
-export class SharedModule { }
+export class HomeModule { }

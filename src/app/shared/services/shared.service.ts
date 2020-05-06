@@ -7,6 +7,7 @@ import * as firebase from 'firebase';
 
 import 'firebase/firestore';
 import { Observable, of } from 'rxjs';
+import { ProjectCard } from '../classes/projectCard';
 
 @Injectable({
   providedIn: 'root'

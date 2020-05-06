@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row" *ngFor="let project of projects">
+    <div class="col-12" *ngIf="project.toShow">
+      <app-project-container
+        [projectTitle]="project.projectTitle"
+        [projectGithubLink]="project.projectGithubLink"
+        [starCount]="project.starCount"
+        [forkCount]="project.forkCount"
+        [description]="project.description"
+        [iconName]="project.iconName"
+        [iconType]="project.iconType"
+        [shortDescription]="project.shortDescription"
+        [madeFor]="project.madeFor"
+        [projectStack]="project.projectStack"
+        [isUnderDevelopment]="project.isUnderDevelopment"
+        [projectPublicLink]="project.projectPublicLink"
+        [developmentStartDate]="project.developmentStartDate"
+        [developmentEndDate]="project.developmentEndDate"
+        class="itemcontainer">
+      </app-project-container>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,13 @@
-// div {
-//   display: inline;
-// }
-
 *.mat-body {
   cursor: default;
 }
 
+.row.project-title {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .project-title {
-  margin-bottom: 10px;
   mat-icon {
       margin-right: 10px;
   }
