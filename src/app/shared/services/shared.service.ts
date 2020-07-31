@@ -33,7 +33,12 @@ export class SharedService {
   }
 
   submitQuery (query: ContactQuery): Promise<firebase.firestore.DocumentReference<firebase.firestore.DocumentData>> {
+    // this.db.enablePersistence().then
     return this.db.collection("queries").add(query);
+  }
+
+  getProjectList (): Promise<firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>> {
+    return this.db.collection('project').where('toShow', '==', true).get();
   }
 
   get isDayTheme (): boolean {

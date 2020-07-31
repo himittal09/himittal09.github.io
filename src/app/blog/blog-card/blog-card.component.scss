@@ -1,0 +1,22 @@
+div.container::before {
+  background-size: cover;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-image: url('../../../assets/pictures/blog_background.jpg');
+  will-change: transform;
+  content: '';
+  background-attachment: fixed;
+  position: fixed;
+}
+
+.container {
+  @media (max-width: 767px) {
+    padding-top: 16px;
+  }
+  @media (min-width: 768px) {
+    padding-top: 24px;
+  }
+}

@@ -8,8 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ContactComponent } from './contact/contact.component';
+import { ConfirmDialougComponent } from './contact/confirm-dialoug.component';
 
 export const blogRoutes: Routes = [
   {
@@ -19,7 +21,10 @@ export const blogRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactComponent],
+  declarations: [
+    ContactComponent,
+    ConfirmDialougComponent
+  ],
   imports: [
     CommonModule,
     MatCardModule,
@@ -28,6 +33,7 @@ export const blogRoutes: Routes = [
     MatButtonModule,
     MatIconModule,
     FormsModule,
+    MatDialogModule,
     RouterModule.forChild(blogRoutes)
   ]
 })

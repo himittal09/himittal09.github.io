@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 import { SharedService } from '@app/shared/services/shared.service';
+
+import { ConfirmDialougComponent } from './confirm-dialoug.component';
 
 @Component({
   selector: 'app-contact',
@@ -10,21 +13,26 @@ import { SharedService } from '@app/shared/services/shared.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor (private service: SharedService) { }
+  constructor (private service: SharedService, private dialog: MatDialog) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit (queryform: NgForm) {
     this.service.submitQuery(queryform.value)
       .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
+        const dialogRef = this.dialog.open(ConfirmDialougComponent, {
+          width: '40vw',
+          data: { message: 'Query submitted successfully!!', btnColor: 'primary', btnMessage: 'Ok' }
+        });
+        queryform.resetForm();
       })
       .catch((error) => {
-        console.error("Error adding document: ", error);
+        const dialogRef = this.dialog.open(ConfirmDialougComponent, {
+          width: '40vw',
+          data: { message: 'Couldn\'t submit query now!!', btnColor: 'warm', btnMessage: 'Ok' }
+        });
+        queryform.resetForm();
       });
-    
-    queryform.resetForm();
   }
 
 }

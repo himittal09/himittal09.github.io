@@ -1,8 +1,8 @@
 <mat-card>
 
   <div class="row project-title">
-    
-    <div class=".offset-lg-1 col-lg-11 col-md-12">
+        
+    <div class="offset-lg-1 col-lg-11 col-md-12 bottom-spacer">
       <span class="project-icon">
         <div *ngIf="iconType === 'svg'; then svgBlock else pngBlock"></div>
         <ng-template #svgBlock>
@@ -14,32 +14,32 @@
       </span>
       <a class="mat-display-2" href="{{projectGithubLink}}" rel="noreferrer" target="_blank">{{projectTitle}}</a>
     </div>
-
-    <div class="offset-lg-4 offset-md-4 col-lg-2 col-sm-6 col-md-3">
+  
+    <div class="offset-lg-4 col-lg-2 offset-md-4 col-md-3 offset-sm-4 col-sm-4 col-6 bottom-spacer">
       <div class="mat-body" matTooltip="Repository Stars">
         <mat-icon aria-hidden="true" aria-label="Star Icon">star</mat-icon><span>{{starCount}}</span>
       </div>
     </div>
-    <div class="col-lg-2 col-sm-6 col-md-3">
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6 bottom-spacer">
       <div class="mat-body" matTooltip="Repository Forks">
         <mat-icon aria-hidden="true" aria-label="Fork Icon">call_split</mat-icon><span>{{forkCount}}</span>
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-12">
+    <div class="col-md-6 col-sm-12 bottom-spacer">
       <div class="mat-body">{{description}}</div>
     </div>
-    <div class="col-lg-6 col-md-12">
-      <div class="mat-body"><strong>Project Type:</strong> {{shortDescription}}</div>
-      <div class="mat-body"><strong>Made During:</strong> {{madeFor}}</div>
-      <div class="mat-body">
+    <div class="col-md-6 col-sm-12 bottom-spacer">
+      <div class="mat-body line-spacer"><strong>Project Type:</strong> {{shortDescription}}</div>
+      <div class="mat-body line-spacer"><strong>Made During:</strong> {{madeFor}}</div>
+      <div class="mat-body line-spacer one-liner">
         <strong>Stack:</strong>
         <mat-chip-list>
-          <mat-chip *ngFor="let item of projectStack">{{item}}</mat-chip>
+          <mat-chip color="accent" selected *ngFor="let item of projectStack">{{item}}</mat-chip>
         </mat-chip-list>
-        <!-- {{projectStack}} -->
       </div>
     </div>
+
   </div>
   
 </mat-card>

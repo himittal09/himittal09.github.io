@@ -38,40 +38,10 @@ export class HomeComponent implements OnInit {
     this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/background_arch.jpg'})`);
   }
 
-/**
-  home -> 0
-  projects -> 1
-  expertise -> 2
-  achievements -> 3
- */
-
-  ngOnInit(): void {
-    // this.route.fragment <- a observable observing changes in the fragments
-    // let fragment: string = this.route.snapshot.fragment;
-    // if (!fragment || fragment === 'home')
-    // {
-    //   this.selectedTabID = 0;
-    // }
-
-    
-
-    // on init, access the fragent, and set the selectedTabID accordingly
-    // set 0 on default, if no fragment
-    // also counter for illegal fragments
-  }
-
-  changeID () {
-    // console.log(this.selectedTabID);
-    // this.route.
-    // on chnage, remove the previous frgament, and set a new fragment
-  }
-
-  ngOnDestroy () {
-    // remove the fragment on destroy
-  }
+  ngOnInit(): void {}
 
   getResume () {
-    const resumeName = 'Internshala-Himanshu_Mittal';
+    const resumeName = 'Resume - Himanshu Mittal';
 
     this.service.getResumeLink(resumeName).then((link) => {
 

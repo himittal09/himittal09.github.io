@@ -1,4 +1,7 @@
 <div class="container">
+  <div *ngIf="projects.length == 0">
+    <p>{{message}}</p>
+  </div>
   <div class="row" *ngFor="let project of projects">
     <div class="col-12" *ngIf="project.toShow">
       <app-project-container

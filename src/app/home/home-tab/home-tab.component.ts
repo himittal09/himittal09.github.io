@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeTabComponent implements OnInit {
 
+  age: number;
+
   constructor() { }
 
   ngOnInit(): void {
+    let birthDayDiff = new Date().getTime() - 873052200000;
+    this.age = new Date(birthDayDiff).getUTCFullYear() - 1970;
   }
 
 }

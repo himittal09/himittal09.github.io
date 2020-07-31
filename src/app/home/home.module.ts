@@ -22,17 +22,17 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 export const homeRoutes: Routes = [
   {
-    path: 'home',
-    component: HomeTabComponent
-  },
-  {
     path: 'projects',
     component: ProjectsTabComponent
   },
   {
     path: 'achievements',
     component: AchievementsTabComponent
-  }
+  },
+  {
+    path: '',
+    component: HomeTabComponent
+  },
 ];
 
 @NgModule({

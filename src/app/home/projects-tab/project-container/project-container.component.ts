@@ -48,7 +48,4 @@ export class ProjectContainerComponent {
 
   // is project under development
   @Input() isUnderDevelopment: boolean;
-
-  // to show project in website or not
-  @Input() toShow?: boolean;
 }

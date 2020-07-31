@@ -11,6 +11,16 @@
 
   .container {
     padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .bottom-offset {
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+    }
   }
 
   .page-header-image {
@@ -52,7 +62,7 @@
           margin-top: -75px;
           img {
             border-radius: 50%;
-            border: 3px solid map-get($map: $background, $key: card); // make border as per theme
+            border: 3px solid map-get($map: $background, $key: card);
             height: 160px;
             width: 160px;
           }
@@ -80,6 +90,9 @@
           display: inline-block;
           width: calc(100% - 100px);
         }
+        .mat-standard-chip {
+          min-height: 30px;
+        }
         mat-chip-list {
           mat-chip {
             margin-top: 10px;
@@ -88,11 +101,9 @@
       }  
     }
   }
-
-
     
-  mat-card {
-    mat-tab-group {
+  main {
+    nav {
       max-width: 2000px;
     }
   }

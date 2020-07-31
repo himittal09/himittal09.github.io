@@ -11,6 +11,25 @@
   mat-icon {
       margin-right: 10px;
   }
+  .bottom-spacer {
+    margin-bottom: 1em;
+  }
+  .line-spacer {
+    line-height: 1.5;
+  }
+  .one-liner {
+    * {
+      display: inline-block;
+    }
+    strong {
+      margin-right: 5px;
+    }
+    .mat-standard-chip {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      min-height: 28px;
+    }
+  }
   .project-icon {
       vertical-align: top;
       height: 48px;
@@ -26,3 +45,5 @@
   margin-bottom: 20px;
   overflow: hidden;
 }
+
+
