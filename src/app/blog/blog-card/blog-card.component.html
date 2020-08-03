@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <p>blog-card works!</p>
-      {{ routedString }}
+    <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-10 col-sm-12">
+      <mat-card>
+        <markdown [data]="toRender"></markdown>
+      </mat-card>
     </div>
   </div>
 </div>

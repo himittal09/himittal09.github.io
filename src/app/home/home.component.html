@@ -6,7 +6,7 @@
       <mat-card>
         <mat-card-header>
           <div class="profile-image-section">
-            <img src="../../../../assets/pictures/me.jpg" alt="Image"/>
+            <img src="../../../../assets/pictures/me.webp" alt="Image"/>
           </div>
           <div class="mat-h2 name">Himanshu Mittal</div>
           <div class="mat-h4 role">Developer, Student, Geek</div>
@@ -34,7 +34,7 @@
             </a>
           </div>
           <div class="mat-h3 resume">
-            <button type="button" mat-flat-button color="primary" (click)="getResume()">Resume</button>
+            <button type="button" mat-flat-button color="primary" (click)="getResume()" aria-label="Resume">Resume</button>
           </div>
         </mat-card-header>
         <mat-divider [inset]="true"></mat-divider>
@@ -81,20 +81,23 @@
     </div>
     <div class="col-lg-8 col-xl-9 col-md-12 bottom-offset">
       <main id="main">
-        <nav mat-tab-nav-bar mat-stretch-tabs color="primary" dynamicHeight>    
+        <nav role="tablist" aria-owns="tab-1 tab-2 tab-3" mat-tab-nav-bar mat-stretch-tabs color="primary" dynamicHeight>    
           <a mat-tab-link
               routerLink="/"
+              id="tab-1"
               routerLinkActive
               #rla="routerLinkActive"
               [active]="rla.isActive"
               [routerLinkActiveOptions]="{ exact: true }">Home</a>
           <a mat-tab-link
               routerLink="/projects"
+              id="tab-2"
               routerLinkActive
               #rla2="routerLinkActive"
               [active]="rla2.isActive">Projects</a>
           <a mat-tab-link
               routerLink="/achievements"
+              id="tab-3"
               routerLinkActive
               #rla3="routerLinkActive"
               [active]="rla3.isActive">Achievements</a>

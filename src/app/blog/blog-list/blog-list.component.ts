@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-list',
@@ -9,9 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BlogListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle('Himanshu Mittal | Blog')
   }
 
 }

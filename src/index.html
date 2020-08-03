@@ -1,22 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Himittal09</title>
+  <title>Himanshu Mittal | Portfolio</title>
   <base href="/">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1976d2">
+  <meta name="Description" content="Personal Portfolio website of Himanshu Mittal">
   <link async rel="icon" type="image/x-icon" href="favicon.ico">
   <link async rel="manifest" href="manifest.webmanifest">
   <link async rel="apple-touch-icon" href="./assets/icons/icon-192x192.png">
-  <link rel="canonical" href="https://himittal09.github.io/"/>
-  <meta name="theme-color" content="#1976d2">
-  <meta name="Description" content="Personal Portfolio website of Himanshu Mittal">
-  <!-- <link async href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet"> -->
-  <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap" rel="stylesheet">
+  <link defer rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="screen">
+  <link defer rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap" media="screen">
+  <link rel="canonical" href="https://himittal.codes"/>
+  <!-- add media="screen" in the generated stylesheet link" -->
 </head>
 <body class="mat-typography">
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+
+  <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+  <script defer src="./init-firebase.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 </body>
 </html>

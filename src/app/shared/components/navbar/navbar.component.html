@@ -8,7 +8,7 @@
       <!-- <a mat-list-item href="#">About</a> -->
       <a mat-list-item [routerLink]="['blog']">Blog</a>
       <a mat-list-item [routerLink]="['contact']">Contact</a>
-      <a mat-list-item (click)="changeTheme()">
+      <a mat-list-item (click)="changeTheme()" aria-label="Switch Theme">
         <mat-icon aria-hidden="false" svgIcon="sun_icon" *ngIf="!isDayTheme"></mat-icon>
         <mat-icon aria-hidden="false" svgIcon="moon_icon" *ngIf="isDayTheme"></mat-icon>
       </a>
@@ -30,7 +30,7 @@
         <!-- <a mat-flat-button href="#">About</a> -->
         <a mat-flat-button [routerLink]="['contact']">Contact</a>
         <a mat-flat-button [routerLink]="['blog']">Blog</a>
-        <button mat-icon-button (click)="changeTheme()">
+        <button mat-icon-button (click)="changeTheme()" aria-label="Switch Theme">
           <mat-icon aria-hidden="false" svgIcon="sun_icon" *ngIf="!isDayTheme"></mat-icon>
           <mat-icon aria-hidden="false" svgIcon="moon_icon" *ngIf="isDayTheme"></mat-icon>
         </button>

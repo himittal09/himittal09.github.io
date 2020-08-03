@@ -1,8 +1,11 @@
 .container {
   padding: 0;
+  div.col-12 {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
   .mat-display-3 {
     font-weight: 100;
     margin-bottom: 30px;
-    margin-top: 70px;
   }
 }

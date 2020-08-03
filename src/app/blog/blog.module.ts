@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
 
+import { MarkdownModule } from 'ngx-markdown';
+
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 
@@ -13,8 +15,8 @@ const blogRoutes: Routes = [
     component: BlogListComponent
   },
   {
-      path: ':blogId',
-      component: BlogCardComponent
+    path: ':blogId',
+    component: BlogCardComponent
   }
 ];
 
@@ -26,7 +28,8 @@ const blogRoutes: Routes = [
   imports: [
     CommonModule,
     MatCardModule,
-    RouterModule.forChild(blogRoutes)
+    RouterModule.forChild(blogRoutes),
+    MarkdownModule.forRoot()
   ]
 })
 export class BlogModule {}

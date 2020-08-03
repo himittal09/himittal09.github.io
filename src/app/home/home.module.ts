@@ -15,9 +15,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 
 export const homeRoutes: Routes = [
@@ -53,9 +50,6 @@ export const homeRoutes: Routes = [
     MatButtonModule,
     MatProgressBarModule,
     MatChipsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
     MatTabsModule
   ],
   exports: [

@@ -14,6 +14,8 @@
 chrome-profiler-events*.json
 speed-measure-plugin*.json
 
+**/*.log
+
 src/app/Playground
 
 # IDEs and editors
@@ -46,3 +48,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+.firebase/

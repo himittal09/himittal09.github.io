@@ -12,9 +12,9 @@ import { AppComponent } from '@app/app.component';
 import { SharedModule } from '@app/shared/shared.module';
 import { HomeModule } from '@app/home/home.module';
 
-import * as firebase from 'firebase/app';
+// import * as firebase from 'firebase/app';
 
-firebase.initializeApp(environment.firebaseConfig);
+// console.log(firebase.initializeApp(environment.firebaseConfig));
 
 @NgModule({
   declarations: [

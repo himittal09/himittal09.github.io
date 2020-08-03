@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-
+import { DomSanitizer, SafeStyle, Title } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
-import { ActivatedRoute } from '@angular/router';
+
 import { SharedService } from '@app/shared/services/shared.service';
 
 @Component({
@@ -13,12 +12,12 @@ import { SharedService } from '@app/shared/services/shared.service';
 export class HomeComponent implements OnInit {
 
   imageURL: SafeStyle;
-  selectedTabID: number = 1;
 
   constructor(private matIconRegisty: MatIconRegistry,
               private domSanitizer: DomSanitizer,
               private service: SharedService,
-              private route: ActivatedRoute) {
+              private title: Title) {
+
     this.matIconRegisty.addSvgIcon(
       'GitHub_Icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/github.svg')
@@ -35,10 +34,13 @@ export class HomeComponent implements OnInit {
       'StackOverflow_Icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stackoverflow.svg')
     );
-    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/background_arch.jpg'})`);
+    this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/background_arch.webp'})`);
+  
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.title.setTitle('Himanshu Mittal | Portfolio');
+  }
 
   getResume () {
     const resumeName = 'Resume - Himanshu Mittal';
@@ -46,6 +48,7 @@ export class HomeComponent implements OnInit {
     this.service.getResumeLink(resumeName).then((link) => {
 
       let pwa = window.open(link);
+      
       if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
         alert( 'Please disable your Pop-up blocker and try again.');
       }
@@ -77,6 +80,5 @@ export class HomeComponent implements OnInit {
     //   console.log(error);
     // });
   }
-  
 
 }

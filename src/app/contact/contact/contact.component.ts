@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 
 import { SharedService } from '@app/shared/services/shared.service';
 
@@ -13,13 +14,17 @@ import { ConfirmDialougComponent } from './confirm-dialoug.component';
 })
 export class ContactComponent implements OnInit {
 
-  constructor (private service: SharedService, private dialog: MatDialog) { }
+  constructor (private service: SharedService,
+               private dialog: MatDialog,
+               private title: Title) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.title.setTitle('Himanshu Mittal | Contact');
+  }
 
   onSubmit (queryform: NgForm) {
     this.service.submitQuery(queryform.value)
-      .then((docRef) => {
+      .then(docRef => {
         const dialogRef = this.dialog.open(ConfirmDialougComponent, {
           width: '40vw',
           data: { message: 'Query submitted successfully!!', btnColor: 'primary', btnMessage: 'Ok' }
