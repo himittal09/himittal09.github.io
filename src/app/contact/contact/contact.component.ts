@@ -26,7 +26,8 @@ export class ContactComponent implements OnInit {
     this.service.submitQuery(queryform.value)
       .then(docRef => {
         const dialogRef = this.dialog.open(ConfirmDialougComponent, {
-          width: '40vw',
+          minWidth: '40vw',
+          maxWidth: '60vw',
           data: { message: 'Query submitted successfully!!', btnColor: 'primary', btnMessage: 'Ok' }
         });
         queryform.resetForm();

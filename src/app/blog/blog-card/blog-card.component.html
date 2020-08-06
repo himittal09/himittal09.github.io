@@ -1,9 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-10 col-sm-12">
-      <mat-card>
-        <markdown [data]="toRender"></markdown>
+      <mat-card *ngIf="blog; else noBlog">
+        <mat-card-header>
+          <mat-card-title>{{blog.title}}</mat-card-title>
+          <mat-card-subtitle>{{preetyDate}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <markdown [data]="blog.body" ngPreserveWhitespaces></markdown>
+        </mat-card-content>
+        <mat-card-footer>
+          <mat-icon color="warn" aria-hidden="true">favorite</mat-icon>
+          <span class="cdk-visually-hidden">Likes</span>
+          <div>{{blog.likes}}</div>
+          <button type="button" [disabled]="blogPostLiked" mat-button (click)="likeBlogPost()">Like</button>
+        </mat-card-footer>
       </mat-card>
+      <ng-template #noBlog>
+        <mat-card>
+          <div class="mat-title">
+            Sorry Friend! This blog doesn't exist yet.
+            Wait for some time. Who knows, he might write one ;)
+          </div>
+        </mat-card>
+      </ng-template>
     </div>
   </div>
 </div>

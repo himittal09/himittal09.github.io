@@ -3,4 +3,5 @@ export interface ContactQuery {
   name: string;
   query: string;
   respondedTo?: boolean;
+  queryID?: string;
 }

@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  blogCountPerFetch: 20,
   firebaseConfig: {
     apiKey: "AIzaSyCttiNBXhOZ_DnwbkF8T8SdcZcbAeX9smQ",
     authDomain: "portfolio-60c77.firebaseapp.com",

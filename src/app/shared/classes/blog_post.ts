@@ -1,6 +1,7 @@
-export interface blog_post {
+export interface blogPost {
   likes?: number;
-  time: Date;
+  date: Date;
   title: string;
   body?: string;
+  docID?: string;
 }

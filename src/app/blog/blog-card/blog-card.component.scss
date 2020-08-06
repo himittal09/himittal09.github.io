@@ -20,3 +20,10 @@ div.container::before {
     padding-top: 24px;
   }
 }
+
+mat-card-footer {
+  white-space: nowrap;
+  & > * {
+    display: inline-block;
+  }
+}

@@ -1,9 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-10 col-sm-12">
-      <mat-card>
-        <div class="mat-display-2">Blog Coming Soon</div>
+      <mat-card *ngFor="let blog of blogs" class="blogDisplayCard" (click)="redirectToBlog(blog.title)">
+        <div class="mat-title">{{blog.title}}</div>
       </mat-card>
+      <mat-card *ngIf="blogs.length === 0">
+        <div class="mat-display-2">{{displayMessage}}</div>
+      </mat-card>
+      <div class="loadMoreButton">
+        <button mat-flat-button type="button" [disabled]="isLast" color="primary" (click)="getNextBlogs(false)">Load More Blogs</button>
+      </div>
     </div>
   </div>
 </div>

@@ -14,4 +14,6 @@ export interface ProjectCard {
   developmentEndDate?: Date;
   isUnderDevelopment: boolean; // is project under development
   toShow?: boolean; // to show project in website or not
+  displayOrder?: number; // the order in which the projects must be displayed to the user
+  projectID?: string; // the firebase ID of the project
 };

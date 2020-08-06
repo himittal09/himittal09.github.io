@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { BehaviorSubject } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 import { ContactQuery } from '@app/shared/classes/query';
+import { ProjectCard } from '@app/shared/classes/projectCard';
+import { Achievement } from '@app/shared/classes/achievement';
 
 // use these files till for development
-// import { firestore, storage } from 'firebase/app';
+// import * as firebase from 'firebase/app';
 // import 'firebase/firestore';
-// import 'firebase/storage';
 
 // use this line to build for production
 declare var firebase: any;
@@ -16,49 +19,74 @@ declare var firebase: any;
 })
 export class SharedService {
 
-  // db: firestore.Firestore;
-  // storage: storage.Storage;
+  private _projects = new BehaviorSubject<ProjectCard[]>(null);
+  private _achievements = new BehaviorSubject<Achievement[]>(null);
+  
+  // private db: firebase.firestore.Firestore;
+  // private blogQuery: firebase.firestore.Query<firebase.firestore.DocumentData>;
 
-  db: any;
-  storage: any;
-
-  constructor(private http: HttpClient) {
+  private db: any;
+  
+  constructor() {
     this.db = firebase.firestore();
-    this.storage = firebase.storage();
     this.db.enablePersistence().then(() => {}, () => {});
   }
 
-  getResumeLink (fileName: string): Promise<any> {
-    return this.storage.refFromURL(`gs://portfolio-60c77.appspot.com/Resumes/${fileName}.pdf`).getDownloadURL();
+  // complete
+  getResumeLink (fileName: string): string {
+    const encoded = encodeURI(fileName);
+    const fileURL = 'https://firebasestorage.googleapis.com/v0/b/portfolio-60c77.appspot.com/o/Resumes%2FResume' + encoded + '.pdf?alt=media';
+    return fileURL;
   }
 
-  getResume (fileName: string): Promise<Blob> {
-    let encoded = encodeURI(fileName);
-    let fileURL = 'https://firebasestorage.googleapis.com/v0/b/portfolio-60c77.appspot.com/o/Resumes%2FResume' + encoded + '.pdf?alt=media';
-    return this.http.get(fileURL, {
-      responseType: 'blob'
-    }).toPromise();
-    // return this.getResumeLink(fileName).then((fileURL: string) => {
-    // });
-  }
-
+  // complete
   submitQuery (query: ContactQuery): Promise<any> {
     return this.db.collection("queries").add(query);
   }
 
-  getProjectList (): Promise<any> {
-    return this.db.collection('project').where('toShow', '==', true).get();
+  // complete
+  getProjectList (): Promise<ProjectCard[]> {
+    if (this._projects.value)
+    {
+      return this._projects.pipe(take(1)).toPromise();  
+    }
+    return this.db.collection('project').where('toShow', '==', true).limit(50).orderBy('displayOrder').get().then((value) => {
+      let projects: ProjectCard[] = [];
+      value.docs.forEach(tt => {
+        let project = <ProjectCard>tt.data();
+        project.projectID = tt.id;
+        projects.push(project);
+      });
+      this._projects.next(projects);
+      return this._projects.pipe(take(1)).toPromise();
+    });
   }
 
-  getAchievementList (): Promise<any> {
-    return this.db.collection('achievements').get();
+  // complete
+  getAchievementList (): Promise<Achievement[]> {
+    if (this._achievements.value)
+    {
+      return this._achievements.pipe(take(1)).toPromise();
+    }
+    return this.db.collection('achievements').limit(50).orderBy('displayOrder').get().then((value) => {
+      let achievements: Achievement[] = [];
+      value.docs.forEach(tt => {
+        let achievement = <Achievement>tt.data();
+        achievement.achievementId = tt.id;
+        achievements.push(achievement);
+      });
+      this._achievements.next(achievements);
+      return this._achievements.pipe(take(1)).toPromise();
+    });
   }
 
+  // complete
   get isDayTheme (): boolean {
     let cl: DOMTokenList = document.body.classList;
     return !cl.contains('my-dark-theme');
   }
 
+  // complete
   toggleTheme () {
     let cl: DOMTokenList = document.body.classList;
     if (this.isDayTheme)

@@ -13,15 +13,24 @@ div.container::before {
 }
 
 .container {
-    @media (max-width: 767px) {
-      padding-top: 16px;
-    }
-    @media (min-width: 768px) {
-      padding-top: 24px;
-    }
+  @media (min-width: 768px) {
+    padding-top: 8px;
+  }
 }
 
 mat-card {
-    text-align: center;
-    padding-bottom: 70vh;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.loadMoreButton {
+  text-align: center;
+}
+
+.blogDisplayCard {
+  max-height: 20vh;
+  cursor: pointer;
+  & > * {
+    text-overflow: ellipsis;
+  }
 }
