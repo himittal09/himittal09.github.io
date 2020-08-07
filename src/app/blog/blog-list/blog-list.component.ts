@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { blogPost } from '@app/shared/classes/blog_post';
+import { blogPost } from '@app/blog/blog_post';
 import { BlogService } from '../blog.service';
 
 @Component({
@@ -43,7 +43,6 @@ export class BlogListComponent implements OnInit {
 
   redirectToBlog (title: string)
   {
-    // const encodedTitle = encodeURI(title);
     this.router.navigate(['blog', title]);
   }
 }

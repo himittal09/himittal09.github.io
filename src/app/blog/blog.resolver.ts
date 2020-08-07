@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 
 import { Observable } from 'rxjs';
 
-import { blogPost } from '@app/shared/classes/blog_post';
+import { blogPost } from '@app/blog/blog_post';
 import { BlogService } from './blog.service';
 
 @Injectable()
@@ -27,9 +27,7 @@ export class BlogResolver implements Resolve<blogPost> {
       {
         return Promise.resolve(null);
       }
-      let bp = <blogPost>data.docs[0].data();
-      bp.docID = data.docs[0].id;
-      return Promise.resolve(bp);
+      return Promise.resolve(<blogPost>data.docs[0].data());
     }).catch((error) => {
       return Promise.reject(error);
     });

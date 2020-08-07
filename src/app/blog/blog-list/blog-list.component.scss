@@ -5,7 +5,7 @@ div.container::before {
     right: 0;
     bottom: 0;
     top: 0;
-    background-image: url('../../../assets/pictures/blog_background.webp');
+    background-image: url('/../../../assets/pictures/blog_background.webp');
     will-change: transform;
     content: '';
     background-attachment: fixed;

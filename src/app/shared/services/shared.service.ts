@@ -35,7 +35,7 @@ export class SharedService {
   // complete
   getResumeLink (fileName: string): string {
     const encoded = encodeURI(fileName);
-    const fileURL = 'https://firebasestorage.googleapis.com/v0/b/portfolio-60c77.appspot.com/o/Resumes%2FResume' + encoded + '.pdf?alt=media';
+    const fileURL = 'https://firebasestorage.googleapis.com/v0/b/portfolio-60c77.appspot.com/o/Resumes%2F' + encoded + '.pdf?alt=media';
     return fileURL;
   }
 

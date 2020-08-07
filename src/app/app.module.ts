@@ -11,6 +11,7 @@ import { AppComponent } from '@app/app.component';
 
 import { SharedModule } from '@app/shared/shared.module';
 import { HomeModule } from '@app/home/home.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 // import * as firebase from 'firebase/app';
 
@@ -28,7 +29,8 @@ import { HomeModule } from '@app/home/home.module';
     HttpClientModule,
     RouterModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

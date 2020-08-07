@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { blogPost } from '@app/shared/classes/blog_post';
+import { blogPost, blogPostConverter } from '@app/blog/blog_post';
 
 import { environment } from '@environments/environment';
 
@@ -27,7 +27,7 @@ export class BlogService {
 
   constructor() {
     this.db = firebase.firestore();
-    this.blogQuery = this.db.collection('blog').limit(environment.blogCountPerFetch);
+    this.blogQuery = this.db.collection('blog').withConverter(blogPostConverter).limit(environment.blogCountPerFetch);
   }
 
   // complete
@@ -50,9 +50,7 @@ export class BlogService {
           this.lastBlogDocument = blogList.docs[blogList.size-1];
         }
         blogList.forEach(blog => {
-          let bp = <blogPost>blog.data();
-          bp.docID = blog.id;
-          this.appendNewBlogs = bp;
+          this.appendNewBlogs = <blogPost>blog.data();
         });
         return Promise.resolve();
       }, (error) => Promise.reject(error));
@@ -82,7 +80,7 @@ export class BlogService {
 
   // complete
   fetchOneBlog (blogTitle: string): Promise<any> {
-    return this.db.collection('blog').where('title', '==', blogTitle).limit(1).get();
+    return this.db.collection('blog').withConverter(blogPostConverter).where('title', '==', blogTitle).limit(1).get();
   }
 
   likeOneBlog (blogId: string): Promise<void>

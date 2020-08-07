@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 
 import { first } from 'rxjs/operators';
 
-import { blogPost } from '@app/shared/classes/blog_post';
+import { blogPost } from '@app/blog/blog_post';
 import { BlogService } from '../blog.service';
 
 @Component({
@@ -16,7 +16,6 @@ export class BlogCardComponent implements OnInit {
 
   blog: blogPost;
   blogPostLiked: boolean = false;
-
   preetyDate: string;
 
   constructor(private route: ActivatedRoute, private title: Title, private service: BlogService) {}
@@ -29,9 +28,9 @@ export class BlogCardComponent implements OnInit {
     this.route.data.pipe(first()).subscribe({
       next: (ss) => {
         this.blog = ss.blog;
+        this.blog.body = this.blog.body.replace('\\n','\n');
         // work on this fucking piece of shit fuck
-        let fuckthisshit = this.blog.date.toDate();
-        this.preetyDate = fuckthisshit.toLocaleDateString('en-IN');
+        this.preetyDate = this.blog.date.toLocaleDateString('en-IN');
       },
       error: (error) => console.log(error)
     });
