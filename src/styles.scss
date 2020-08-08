@@ -1,3 +1,9 @@
+// If you want to consume your theme definition object (e.g., $candy-app-theme) in other SCSS files,
+// then the definition of the theme object should be broken into its own file,
+// separate from the inclusion of the mat-core and angular-material-theme mixins.
+
+
+
 @import "./assets/css/bootstrap-grid.scss";
 
 html {
@@ -161,25 +167,48 @@ $my-dark-theme: mat-dark-theme(
 	$my-theme-warn
 );
 
+
+@mixin my-components-theme ($theme) {
+	// add all/any material components that you use here,
+	// otherwise the theming wont be applied to that angular component
+  @include mat-button-theme($theme);
+  @include mat-icon-theme($theme);
+  @include mat-card-theme($theme);
+  @include mat-tooltip-theme($theme);
+  @include mat-chips-theme($theme);
+  @include mat-tabs-theme($theme);
+  @include mat-dialog-theme($theme);
+  @include mat-divider-theme($theme);
+  @include mat-progress-bar-theme($theme);
+  @include mat-input-theme($theme);
+	@include mat-core-theme($theme);
+  @include mat-form-field-theme($theme);
+  @include mat-list-theme($theme);
+  @include mat-sidenav-theme($theme);
+  @include mat-toolbar-theme($theme);
+}
+
+@mixin my_custom_mixin ($theme) {
+	// include the project level components here
+	@include my-components-theme($theme);
+	@include home-component-theme($theme);
+}
+
 // // move the @include statement out to just apply it to whole webpage
 @media (prefers-color-scheme: dark) {
-	@include angular-material-theme($my-dark-theme);
-	@include home-component-theme($my-dark-theme);
+	@include my_custom_mixin($my-dark-theme);
 	img:not([src*=".svg"]) {
 		filter: grayscale(50%);
 	}
 }
 @media (prefers-color-scheme: light) {
-	@include angular-material-theme($my-theme);
-	@include home-component-theme($my-theme);
+	@include my_custom_mixin($my-theme);
 }
 .my-theme {
-	@include angular-material-theme($my-theme);
-	@include home-component-theme($my-theme);
+	@include my_custom_mixin($my-theme);
 }
 .my-dark-theme {
-	@include angular-material-theme($my-dark-theme);
-	@include home-component-theme($my-dark-theme);
+	@include my_custom_mixin($my-dark-theme);
 	img:not([src*=".svg"]) {
 		filter: grayscale(50%);
 	}
