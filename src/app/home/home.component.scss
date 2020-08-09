@@ -1,13 +1,15 @@
 @import '~@angular/material/theming';
 
-@mixin home-component-theme($theme) {
+@mixin home-component-theme($config-or-theme) {
   
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $is-dark: map-get($theme, is-dark); // true for light theme, false for dark theme
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
+  $config: mat-get-color-config($config-or-theme);
+
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+  $warn: map-get($config, warn);
+  $is-dark: map-get($config, is-dark); // true for light theme, false for dark theme
+  $foreground: map-get($config, foreground);
+  $background: map-get($config, background);
 
   .container {
     padding-top: 0;

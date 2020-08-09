@@ -31,12 +31,11 @@
               "src/init-firebase.js"
             ],
             "styles": [
+              "src/themes.scss",
               "src/styles.scss"
             ],
             "scripts": [],
-            "lazyModules": [
-              "./src/app/shared/shared.module"
-            ]
+            "lazyModules": []
           },
           "configurations": {
             "production": {
@@ -103,6 +102,7 @@
               "src/firebase-init.js"
             ],
             "styles": [
+              "src/themes.scss",
               "src/styles.scss"
             ],
             "scripts": []

@@ -92,11 +92,11 @@ export class SharedService {
     if (this.isDayTheme)
     {
       cl.add('my-dark-theme');
-      cl.remove('my-theme');
+      // cl.remove('my-theme');
     }
     else
     {
-      cl.add('my-theme');
+      // cl.add('my-theme');
       cl.remove('my-dark-theme');
     }
   }

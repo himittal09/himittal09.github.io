@@ -1,9 +1,3 @@
-// If you want to consume your theme definition object (e.g., $candy-app-theme) in other SCSS files,
-// then the definition of the theme object should be broken into its own file,
-// separate from the inclusion of the mat-core and angular-material-theme mixins.
-
-
-
 @import "./assets/css/bootstrap-grid.scss";
 
 html {
@@ -43,134 +37,14 @@ img {
 }
 
 @import '~@angular/material/theming';
+@import './themes.scss';
 @import 'app/home/home.component';
 
 @include mat-core();
 
-// you need only threee colors
-$my-theme-primary: mat-palette($mat-pink);
-$my-theme-accent: mat-palette($mat-blue);
-$my-theme-warn: mat-palette($mat-deep-orange, A200);
-
-/*
-* Background palette for light themes.
-$mat-light-theme-background: (
-	status-bar: map_get($mat-grey, 300),
-	app-bar:    map_get($mat-grey, 100),
-	background: map_get($mat-grey, 50),
-	hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
-	card:       white,
-	dialog:     white,
-	disabled-button: rgba(black, 0.12),
-	raised-button: white,
-	focused-button: $dark-focused,
-	selected-button: map_get($mat-grey, 300),
-	selected-disabled-button: map_get($mat-grey, 400),
-	disabled-button-toggle: map_get($mat-grey, 200),
-	unselected-chip: map_get($mat-grey, 300),
-	disabled-list-option: map_get($mat-grey, 200),
-	tooltip: map_get($mat-grey, 700),
-  );
-  
-  // Background palette for dark themes.
-$mat-dark-theme-background: (
-	status-bar: black,
-	app-bar:    map_get($mat-grey, 900),
-	background: #303030,
-	hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
-	card:       map_get($mat-grey, 800),
-	dialog:     map_get($mat-grey, 800),
-	disabled-button: rgba(white, 0.12),
-	raised-button: map-get($mat-grey, 800),
-	focused-button: $light-focused,
-	selected-button: map_get($mat-grey, 900),
-	selected-disabled-button: map_get($mat-grey, 800),
-	disabled-button-toggle: black,
-	unselected-chip: map_get($mat-grey, 700),
-	disabled-list-option: black,
-	tooltip: map_get($mat-grey, 700),
-  );
-  
-  // Foreground palette for light themes.
-  $mat-light-theme-foreground: (
-	base:              black,
-	divider:           $dark-dividers,
-	dividers:          $dark-dividers,
-	disabled:          $dark-disabled-text,
-	disabled-button:   rgba(black, 0.26),
-	disabled-text:     $dark-disabled-text,
-	elevation:         black,
-	hint-text:         $dark-disabled-text,
-	secondary-text:    $dark-secondary-text,
-	icon:              rgba(black, 0.54),
-	icons:             rgba(black, 0.54),
-	text:              rgba(black, 0.87),
-	slider-min:        rgba(black, 0.87),
-	slider-off:        rgba(black, 0.26),
-	slider-off-active: rgba(black, 0.38),
-  );
-  
-  // Foreground palette for dark themes.
-  $mat-dark-theme-foreground: (
-	base:              white,
-	divider:           $light-dividers,
-	dividers:          $light-dividers,
-	disabled:          $light-disabled-text,
-	disabled-button:   rgba(white, 0.3),
-	disabled-text:     $light-disabled-text,
-	elevation:         black,
-	hint-text:         $light-disabled-text,
-	secondary-text:    $light-secondary-text,
-	icon:              white,
-	icons:             white,
-	text:              white,
-	slider-min:        white,
-	slider-off:        rgba(white, 0.3),
-	slider-off-active: rgba(white, 0.3),
-  );
-
-    @function mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    is-dark: false,
-    foreground: $mat-light-theme-foreground,
-    background: $mat-light-theme-background,
-  );
-}
-
-
-// Creates a container object for a dark theme to be given to individual component theme mixins.
-@function mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    is-dark: true,
-    foreground: $mat-dark-theme-foreground,
-    background: $mat-dark-theme-background,
-  );
-}
-*/
-
-// create theme (use mat-dark-theme for themes with dark backgrounds)
-// light being my default
-$my-theme: mat-light-theme(
-	$my-theme-primary,
-	$my-theme-accent,
-	$my-theme-warn
-);
-$my-dark-theme: mat-dark-theme(
-	$my-theme-primary,
-	$my-theme-accent,
-	$my-theme-warn
-);
-
-
+// add all/any material components that you use here,
+// otherwise the theming wont be applied to that angular component
 @mixin my-components-theme ($theme) {
-	// add all/any material components that you use here,
-	// otherwise the theming wont be applied to that angular component
   @include mat-button-theme($theme);
   @include mat-icon-theme($theme);
   @include mat-card-theme($theme);
@@ -188,27 +62,55 @@ $my-dark-theme: mat-dark-theme(
   @include mat-toolbar-theme($theme);
 }
 
-@mixin my_custom_mixin ($theme) {
-	// include the project level components here
+// include the project level components here
+@mixin my_custom_theme_mixin ($theme) {
 	@include my-components-theme($theme);
 	@include home-component-theme($theme);
 }
 
-// // move the @include statement out to just apply it to whole webpage
-@media (prefers-color-scheme: dark) {
-	@include my_custom_mixin($my-dark-theme);
-	img:not([src*=".svg"]) {
-		filter: grayscale(50%);
-	}
+// we include color, typography and density globally
+// then we define custom color for each theme later
+@include my_custom_theme_mixin($my-theme);
+
+// we apply seperate color for each theme (light, dark)
+@mixin my-components-color-theme ($color) {
+  @include mat-button-color($color);
+  @include mat-icon-color($color);
+  @include mat-card-color($color);
+  @include mat-tooltip-color($color);
+  @include mat-chips-color($color);
+  @include mat-tabs-color($color);
+  @include mat-dialog-color($color);
+  @include mat-divider-color($color);
+  @include mat-progress-bar-color($color);
+  @include mat-input-color($color);
+	@include mat-core-color($color);
+  @include mat-form-field-color($color);
+  @include mat-list-color($color);
+  @include mat-sidenav-color($color);
+  @include mat-toolbar-color($color);
 }
-@media (prefers-color-scheme: light) {
-	@include my_custom_mixin($my-theme);
+
+// include the project level components here
+@mixin my_custom_color_mixin ($color) {
+	@include my-components-color-theme($color);
+	@include home-component-theme($color);
 }
-.my-theme {
-	@include my_custom_mixin($my-theme);
-}
+
+// uncomment the following blocks of code
+// if you don't to do the questionable hack i did in index.html and shared services toggle theme
+// the terrible hack is more powerful and space saving but in modern browsers
+// @media (prefers-color-scheme: dark) {
+// 	@include my_custom_color_mixin($my-dark-theme);
+// 	img:not([src*=".svg"]) {
+// 		filter: grayscale(50%);
+// 	}
+// }
+// .my-theme {
+// 	@include my_custom_color_mixin($my-theme);
+// }
 .my-dark-theme {
-	@include my_custom_mixin($my-dark-theme);
+	@include my_custom_color_mixin($my-dark-theme);
 	img:not([src*=".svg"]) {
 		filter: grayscale(50%);
 	}
