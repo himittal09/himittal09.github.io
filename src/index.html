@@ -21,19 +21,18 @@
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 
-  <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <!-- <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-  <script defer src="./init-firebase.js"></script>
+  <script defer src="./init-firebase.js"></script> -->
   <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
     let a = window.matchMedia('(prefers-color-scheme: dark)');
     let c = document.body.classList;
-    b.addEventListener('change', (b, ev) => {
+    a.addEventListener('change', (b, ev) => {
       if (b.matches) c.add('my-dark-theme');
       else c.remove('my-dark-theme');
     });
-    if (b.matches) c.add('my-dark-theme');
   </script>
 
 </body>

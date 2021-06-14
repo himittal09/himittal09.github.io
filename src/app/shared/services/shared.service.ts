@@ -8,11 +8,11 @@ import { ProjectCard } from '@app/shared/classes/projectCard';
 import { Achievement } from '@app/shared/classes/achievement';
 
 // use these files till for development
-// import * as firebase from 'firebase/app';
-// import 'firebase/firestore';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 // use this line to build for production
-declare var firebase: any;
+// declare var firebase: any;
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +22,13 @@ export class SharedService {
   private _projects = new BehaviorSubject<ProjectCard[]>(null);
   private _achievements = new BehaviorSubject<Achievement[]>(null);
   
-  // private db: firebase.firestore.Firestore;
-  // private blogQuery: firebase.firestore.Query<firebase.firestore.DocumentData>;
+  private db: firebase.firestore.Firestore;
 
-  private db: any;
+  // private db: any;
   
   constructor() {
     this.db = firebase.firestore();
-    this.db.enablePersistence().then(() => {}, () => {});
+    // this.db.enablePersistence().then(() => {}, () => {});
   }
 
   // complete

@@ -1,4 +1,8 @@
-div.container::before {
+div.container {
+  @media (min-width: 768px) {
+    padding-top: 8px;
+  }
+  &:before {
     background-size: cover;
     z-index: -1;
     left: 0;
@@ -10,27 +14,19 @@ div.container::before {
     content: '';
     background-attachment: fixed;
     position: fixed;
-}
-
-.container {
-  @media (min-width: 768px) {
-    padding-top: 8px;
   }
-}
-
-mat-card {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.loadMoreButton {
-  text-align: center;
-}
-
-.blogDisplayCard {
-  max-height: 20vh;
-  cursor: pointer;
-  & > * {
-    text-overflow: ellipsis;
+  .loadMoreButton {
+    text-align: center;
+  }
+  mat-card {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    &.blogDisplayCard {
+      max-height: 20vh;
+      cursor: pointer;
+      & > * {
+        text-overflow: ellipsis;
+      }
+    }
   }
 }

@@ -45,21 +45,21 @@ mat-card {
           box-shadow: none;
           cursor: default;
         }
-      }
-      .line-container:before,.line-container:after{
-        content:" ";
-        width: calc(50% - 40px);
-        height: 1px;
-        margin: 0;
-        vertical-align: super;
-        background-color:grey;
-        display: inline-block;
-      }
-      .line-container:before {
-        margin-right: 10px;
-      }
-      .line-container:after {
-        margin-left: 10px;
+        &:before,&:after{
+          content:" ";
+          width: calc(50% - 40px);
+          height: 1px;
+          margin: 0;
+          vertical-align: super;
+          background-color:grey;
+          display: inline-block;
+        }
+        &:before {
+          margin-right: 10px;
+        }
+        &:after {
+          margin-left: 10px;
+        }
       }
     }
     .example-full-width {

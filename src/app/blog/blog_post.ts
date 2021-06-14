@@ -1,4 +1,8 @@
-declare var firebase: any;
+// use these files till for development
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
+
+// declare var firebase: any;
 
 export class blogPost {
   likes: number;

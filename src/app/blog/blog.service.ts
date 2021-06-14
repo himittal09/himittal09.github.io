@@ -6,11 +6,11 @@ import { blogPost, blogPostConverter } from '@app/blog/blog_post';
 import { environment } from '@environments/environment';
 
 // use these files till for development
-// import * as firebase from 'firebase/app';
-// import 'firebase/firestore';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 // use this line to build for production
-declare var firebase: any;
+// declare var firebase: any;
 
 @Injectable()
 export class BlogService {
@@ -19,11 +19,11 @@ export class BlogService {
   private lastBlogDocument: any = null;
   private _isLastBlog: boolean = false;
   
-  // private db: firebase.firestore.Firestore;
-  // private blogQuery: firebase.firestore.Query<firebase.firestore.DocumentData>;
+  private db: firebase.firestore.Firestore;
+  private blogQuery: firebase.firestore.Query<firebase.firestore.DocumentData>;
 
-  private db: any;
-  private blogQuery: any;
+  // private db: any;
+  // private blogQuery: any;
 
   constructor() {
     this.db = firebase.firestore();
