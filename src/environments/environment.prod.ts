@@ -9,5 +9,6 @@ export const environment = {
     storageBucket: "portfolio-60c77.appspot.com",
     messagingSenderId: "24486239812",
     appId: "1:24486239812:web:a6b36f739884d500e5a611"
-  }
+  },
+  contactEmailLink: 'https://us-central1-portfolio-60c77.cloudfunctions.net/sendEmail'
 };

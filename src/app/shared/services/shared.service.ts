@@ -10,6 +10,8 @@ import { Achievement } from '@app/shared/classes/achievement';
 // use these files till for development
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '@environments/environment';
 
 // use this line to build for production
 // declare var firebase: any;
@@ -26,7 +28,7 @@ export class SharedService {
 
   // private db: any;
   
-  constructor() {
+  constructor(private http: HttpClient) {
     this.db = firebase.firestore();
     // this.db.enablePersistence().then(() => {}, () => {});
   }
@@ -39,8 +41,16 @@ export class SharedService {
   }
 
   // complete
-  submitQuery (query: ContactQuery): Promise<any> {
-    return this.db.collection("queries").add(query);
+  async submitQuery (query: ContactQuery): Promise<any> {
+    try {
+      await this.http.post(environment.contactEmailLink, {
+        name: query.name,
+        email: query.email,
+        query: query.query
+      }).toPromise();
+    } catch (error) {
+      return error;
+    }
   }
 
   // complete

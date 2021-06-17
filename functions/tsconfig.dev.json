@@ -1,0 +1,10 @@
+{
+  "include": [
+    ".eslintrc.js"
+  ],
+  "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  }
+}
