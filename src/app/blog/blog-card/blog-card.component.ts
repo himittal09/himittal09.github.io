@@ -16,9 +16,11 @@ export class BlogCardComponent implements OnInit {
 
   blog: blogPost;
   blogPostLiked: boolean = false;
-  preetyDate: string;
+  preetyDate: string = '';
 
-  constructor(private route: ActivatedRoute, private title: Title, private service: BlogService) {}
+  constructor(private route: ActivatedRoute, private title: Title, private service: BlogService) {
+    this.blog = new blogPost(0, '', '', new Date());
+  }
 
   ngOnInit(): void {
     let routedString = this.route.snapshot.url[0].toString();
@@ -40,7 +42,8 @@ export class BlogCardComponent implements OnInit {
   {
     this.blogPostLiked = true;
     this.blog.likes++;
-    this.service.likeOneBlog(this.blog.docID).catch(error => {
+    const blogId: string = <string>this.blog.docID;
+    this.service.likeOneBlog(blogId).catch(error => {
       console.log(error);
       this.blogPostLiked = false;
       this.blog.likes--;

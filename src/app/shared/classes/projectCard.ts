@@ -7,7 +7,7 @@ export interface ProjectCard {
   forkCount: number; // forkcount in the repo
   description: string; // long description, supports markdown
   shortDescription: string; // for quick overview
-  iconType?: 'svg' | 'png'; // for displaying correctly
+  iconType: 'svg' | 'png'; // for displaying correctly
   iconName?: string; // give only name, not path
   madeFor: string; // mention either employer or semester if learning
   developmentStartDate?: Date;

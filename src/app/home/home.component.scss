@@ -10,6 +10,9 @@
   $is-dark: map-get($config, is-dark); // true for light theme, false for dark theme
   $foreground: map-get($config, foreground);
   $background: map-get($config, background);
+    
+  $typography-config: mat.get-typography-config($config-or-theme);
+  $my-font-family: mat.font-family($typography-config);
 
   .container {
     padding-top: 0;

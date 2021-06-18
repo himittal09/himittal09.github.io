@@ -7,14 +7,14 @@ import { blogPost } from '@app/blog/blog_post';
 import { BlogService } from './blog.service';
 
 @Injectable()
-export class BlogResolver implements Resolve<blogPost> {
+export class BlogResolver implements Resolve<blogPost| null> {
 
   constructor(private service: BlogService) { }
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<blogPost> | Promise<blogPost> | blogPost {
+  ): Observable<blogPost | null> | Promise<blogPost | null> | blogPost | null {
     let url = route.url[0].toString();
     let decoded = decodeURI(url);
     let blog = this.service.getOneBlog(decoded);

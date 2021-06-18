@@ -74,7 +74,25 @@ img {
 @include my_custom_theme_mixin($my-theme);
 
 .my-dark-theme {
-	@include my_custom_color_mixin($my-dark-theme);
+	@include mat.button-color($my-dark-theme);
+	@include mat.icon-color($my-dark-theme);
+	@include mat.card-color($my-dark-theme);
+	@include mat.tooltip-color($my-dark-theme);
+	@include mat.chips-color($my-dark-theme);
+	@include mat.tabs-color($my-dark-theme);
+	@include mat.dialog-color($my-dark-theme);
+	@include mat.divider-color($my-dark-theme);
+	@include mat.progress-bar-color($my-dark-theme);
+	@include mat.input-color($my-dark-theme);
+	@include mat.core-color($my-dark-theme);
+	@include mat.form-field-color($my-dark-theme);
+	@include mat.list-color($my-dark-theme);
+	@include mat.sidenav-color($my-dark-theme);
+	@include mat.toolbar-color($my-dark-theme);
+	
+	// include the project level components here
+	@include home-component-theme($my-dark-theme);
+
 	img:not([src*=".svg"]) {
 		filter: grayscale(50%);
 	}

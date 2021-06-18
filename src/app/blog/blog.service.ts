@@ -74,7 +74,7 @@ export class BlogService {
   }
 
   // complete
-  getOneBlog (blogTitle: string): blogPost {
+  getOneBlog (blogTitle: string): blogPost | undefined {
     return this._blogs.value.find(value => (value.title === blogTitle));
   }
 

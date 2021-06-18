@@ -21,8 +21,8 @@ import { environment } from '@environments/environment';
 })
 export class SharedService {
 
-  private _projects = new BehaviorSubject<ProjectCard[]>(null);
-  private _achievements = new BehaviorSubject<Achievement[]>(null);
+  private _projects = new BehaviorSubject<ProjectCard[]>([]);
+  private _achievements = new BehaviorSubject<Achievement[]>([]);
   
   private db: firebase.firestore.Firestore;
 

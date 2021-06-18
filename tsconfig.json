@@ -10,6 +10,9 @@
     "module": "es2020",
     "strict": true,
     "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
     "importHelpers": true,
     "target": "es2015",
     "lib": [
@@ -25,6 +28,8 @@
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "strictTemplates": true,
+    "strictInputAccessModifiers": true
   }
 }

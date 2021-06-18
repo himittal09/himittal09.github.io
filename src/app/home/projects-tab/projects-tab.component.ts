@@ -35,7 +35,7 @@ export class ProjectsTabComponent implements OnInit {
         if (project.iconType === 'svg')
         {
           this.matIconRegisty.addSvgIcon(
-            project.iconName,
+            <string>project.iconName,
             this.domSanitizer.bypassSecurityTrustResourceUrl(`../../../../assets/icons/${project.iconName}.svg`)
           );
         }

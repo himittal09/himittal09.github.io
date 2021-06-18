@@ -4,6 +4,13 @@
 // you need only threee colors
 $my-theme-primary: mat.define-palette(mat.$pink-palette);
 $my-theme-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+$my-custom-level: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: normal,
+);
 
 /*
 * Background palette for light themes.
@@ -89,11 +96,13 @@ $my-theme: mat.define-light-theme((
 	color: (
 		primary: $my-theme-primary,
 		accent: $my-theme-accent
-	)
+	),
+	typography: $my-custom-level
 ));
 $my-dark-theme: mat.define-dark-theme((
 	color: (
 		primary: $my-theme-primary,
 		accent: $my-theme-accent
-	)
+	),
+	typography: $my-custom-level
 ));
