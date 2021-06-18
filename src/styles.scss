@@ -73,43 +73,6 @@ img {
 // then we define custom color for each theme later
 @include my_custom_theme_mixin($my-theme);
 
-// we apply seperate color for each theme (light, dark)
-@mixin my-components-color-theme ($color) {
-  @include mat.button-color($color);
-  @include mat.icon-color($color);
-  @include mat.card-color($color);
-  @include mat.tooltip-color($color);
-  @include mat.chips-color($color);
-  @include mat.tabs-color($color);
-  @include mat.dialog-color($color);
-  @include mat.divider-color($color);
-  @include mat.progress-bar-color($color);
-  @include mat.input-color($color);
-	@include mat.core-color($color);
-  @include mat.form-field-color($color);
-  @include mat.list-color($color);
-  @include mat.sidenav-color($color);
-  @include mat.toolbar-color($color);
-}
-
-// include the project level components here
-@mixin my_custom_color_mixin ($color) {
-	@include my-components-color-theme($color);
-	@include home-component-theme($color);
-}
-
-// uncomment the following blocks of code
-// if you don't to do the questionable hack i did in index.html and shared services toggle theme
-// the terrible hack is more powerful and space saving but in modern browsers
-// @media (prefers-color-scheme: dark) {
-// 	@include my_custom_color_mixin($my-dark-theme);
-// 	img:not([src*=".svg"]) {
-// 		filter: grayscale(50%);
-// 	}
-// }
-// .my-theme {
-// 	@include my_custom_color_mixin($my-theme);
-// }
 .my-dark-theme {
 	@include my_custom_color_mixin($my-dark-theme);
 	img:not([src*=".svg"]) {
