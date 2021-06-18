@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "./assets/css/bootstrap-grid.scss";
 
 html {
@@ -40,26 +41,26 @@ img {
 @import './themes.scss';
 @import 'app/home/home.component';
 
-@include mat-core();
+@include mat.core();
 
 // add all/any material components that you use here,
 // otherwise the theming wont be applied to that angular component
 @mixin my-components-theme ($theme) {
-  @include mat-button-theme($theme);
-  @include mat-icon-theme($theme);
-  @include mat-card-theme($theme);
-  @include mat-tooltip-theme($theme);
-  @include mat-chips-theme($theme);
-  @include mat-tabs-theme($theme);
-  @include mat-dialog-theme($theme);
-  @include mat-divider-theme($theme);
-  @include mat-progress-bar-theme($theme);
-  @include mat-input-theme($theme);
-	@include mat-core-theme($theme);
-  @include mat-form-field-theme($theme);
-  @include mat-list-theme($theme);
-  @include mat-sidenav-theme($theme);
-  @include mat-toolbar-theme($theme);
+  @include mat.button-theme($theme);
+  @include mat.icon-theme($theme);
+  @include mat.card-theme($theme);
+  @include mat.tooltip-theme($theme);
+  @include mat.chips-theme($theme);
+  @include mat.tabs-theme($theme);
+  @include mat.dialog-theme($theme);
+  @include mat.divider-theme($theme);
+  @include mat.progress-bar-theme($theme);
+  @include mat.input-theme($theme);
+	@include mat.core-theme($theme);
+  @include mat.form-field-theme($theme);
+  @include mat.list-theme($theme);
+  @include mat.sidenav-theme($theme);
+  @include mat.toolbar-theme($theme);
 }
 
 // include the project level components here
@@ -74,21 +75,21 @@ img {
 
 // we apply seperate color for each theme (light, dark)
 @mixin my-components-color-theme ($color) {
-  @include mat-button-color($color);
-  @include mat-icon-color($color);
-  @include mat-card-color($color);
-  @include mat-tooltip-color($color);
-  @include mat-chips-color($color);
-  @include mat-tabs-color($color);
-  @include mat-dialog-color($color);
-  @include mat-divider-color($color);
-  @include mat-progress-bar-color($color);
-  @include mat-input-color($color);
-	@include mat-core-color($color);
-  @include mat-form-field-color($color);
-  @include mat-list-color($color);
-  @include mat-sidenav-color($color);
-  @include mat-toolbar-color($color);
+  @include mat.button-color($color);
+  @include mat.icon-color($color);
+  @include mat.card-color($color);
+  @include mat.tooltip-color($color);
+  @include mat.chips-color($color);
+  @include mat.tabs-color($color);
+  @include mat.dialog-color($color);
+  @include mat.divider-color($color);
+  @include mat.progress-bar-color($color);
+  @include mat.input-color($color);
+	@include mat.core-color($color);
+  @include mat.form-field-color($color);
+  @include mat.list-color($color);
+  @include mat.sidenav-color($color);
+  @include mat.toolbar-color($color);
 }
 
 // include the project level components here
