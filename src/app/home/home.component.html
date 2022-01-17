@@ -40,37 +40,20 @@
         <mat-divider [inset]="true"></mat-divider>
         <mat-card-content>
           <div class="expertise">
-            <div class="mat-h2">Expertise</div>
-            <div class="expertise-item">
-              <span class="text"><mat-chip>Nodejs</mat-chip></span>
-              <span>
-                <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
-              </span>
-            </div>
-            <div class="expertise-item">
-              <span class="text"><mat-chip>Angular</mat-chip></span>
-              <span>
-                <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
-              </span>
-            </div>
-            <div class="expertise-item">
-              <span class="text"><mat-chip>MongoDB</mat-chip></span>
-              <span>
-                <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-              </span>
-            </div>
-            <div class="expertise-item">
-              <span class="text"><mat-chip>C++</mat-chip></span>
-              <span>
-                <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
-              </span>
-            </div>
+            <div class="mat-h2">Major Expertise</div>
+            <mat-chip-list aria-label="Other Expertise" class="other-expertise">
+              <mat-chip>C++</mat-chip>
+              <mat-chip>MongoDB</mat-chip>
+              <mat-chip>Angular</mat-chip>
+              <mat-chip>Nodejs</mat-chip>
+              <mat-chip>Firebase</mat-chip>
+            </mat-chip-list>
+            <div class="mat-h2">Other Expertise</div>
             <mat-chip-list aria-label="Other Expertise" class="other-expertise">
               <mat-chip>PostgreSQL</mat-chip>
               <mat-chip>Java</mat-chip>
               <mat-chip>Bootstrap</mat-chip>
               <mat-chip>Material</mat-chip>
-              <mat-chip>Firebase</mat-chip>
               <mat-chip>Socket.IO</mat-chip>
             </mat-chip-list>
           </div>

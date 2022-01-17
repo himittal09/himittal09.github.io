@@ -1,8 +1,4 @@
-// use these files till for development
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
-
-// declare var firebase: any;
+import { Timestamp } from "firebase/firestore";
 
 export class blogPost {
   likes: number;
@@ -32,7 +28,7 @@ export const blogPostConverter = {
   toFirestore (blog: blogPost): any {
     return {
       likes: blog.likes,
-      date: firebase.firestore.Timestamp.fromDate(blog.date),
+      date: Timestamp.fromDate(blog.date),
       title: blog.title,
       body: blog.body
     };

@@ -13,9 +13,9 @@ import { SharedModule } from '@app/shared/shared.module';
 import { HomeModule } from '@app/home/home.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
-import * as firebase from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 
-console.log(firebase.initializeApp(environment.firebaseConfig));
+initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [

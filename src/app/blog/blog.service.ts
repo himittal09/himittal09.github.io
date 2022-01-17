@@ -5,12 +5,7 @@ import { blogPost, blogPostConverter } from '@app/blog/blog_post';
 
 import { environment } from '@environments/environment';
 
-// use these files till for development
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
-
-// use this line to build for production
-// declare var firebase: any;
+import { DocumentData, Query, Firestore, getFirestore, startAfter, increment, FieldValue, updateDoc, query, collection, limit, where, getDocs, getDoc, doc } from 'firebase/firestore';
 
 @Injectable()
 export class BlogService {
@@ -19,15 +14,12 @@ export class BlogService {
   private lastBlogDocument: any = null;
   private _isLastBlog: boolean = false;
   
-  private db: firebase.firestore.Firestore;
-  private blogQuery: firebase.firestore.Query<firebase.firestore.DocumentData>;
-
-  // private db: any;
-  // private blogQuery: any;
+  private db: Firestore;
+  private blogQuery: Query<blogPost>;
 
   constructor() {
-    this.db = firebase.firestore();
-    this.blogQuery = this.db.collection('blog').withConverter(blogPostConverter).limit(environment.blogCountPerFetch);
+    this.db = getFirestore();
+    this.blogQuery = query(collection(this.db, 'blog'), limit(environment.blogCountPerFetch)).withConverter(blogPostConverter);
   }
 
   // complete
@@ -41,9 +33,9 @@ export class BlogService {
     {
       if (this.lastBlogDocument)
       {
-        this.blogQuery = this.blogQuery.startAfter(this.lastBlogDocument);
+        this.blogQuery = query(this.blogQuery, startAfter(this.lastBlogDocument));
       }
-      return this.blogQuery.get().then((blogList) => {
+      return getDocs(this.blogQuery).then((blogList) => {
         this._isLastBlog = (blogList.size !== environment.blogCountPerFetch);
         if (!blogList.empty)
         {
@@ -52,7 +44,6 @@ export class BlogService {
         blogList.forEach(blog => {
           this.appendNewBlogs = <blogPost>blog.data();
         });
-        return Promise.resolve();
       }, (error) => Promise.reject(error));
     }
     return Promise.resolve();
@@ -80,14 +71,16 @@ export class BlogService {
 
   // complete
   fetchOneBlog (blogTitle: string): Promise<any> {
-    return this.db.collection('blog').withConverter(blogPostConverter).where('title', '==', blogTitle).limit(1).get();
+    const q = query(collection(this.db, 'blog'), where('title', '==', blogTitle), limit(1)).withConverter(blogPostConverter);
+    return getDocs(q);
   }
 
   likeOneBlog (blogId: string): Promise<void>
   {
-    return this.db.collection('blog').doc(blogId).update({
-      likes: firebase.firestore.FieldValue.increment(1)
-    });
+    const q = doc(this.db, 'blog', blogId);    
+    return updateDoc(q, {
+      likes: increment(1)
+    })
   }
 
 }

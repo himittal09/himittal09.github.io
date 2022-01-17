@@ -7,14 +7,10 @@ import { ContactQuery } from '@app/shared/classes/query';
 import { ProjectCard } from '@app/shared/classes/projectCard';
 import { Achievement } from '@app/shared/classes/achievement';
 
-// use these files till for development
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
+import { getFirestore, Firestore, collection, where, query, limit, orderBy, getDocs } from 'firebase/firestore';
+
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@environments/environment';
-
-// use this line to build for production
-// declare var firebase: any;
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +18,16 @@ import { environment } from '@environments/environment';
 export class SharedService {
 
   private _projects = new BehaviorSubject<ProjectCard[]>([]);
+  private _projectsFetched: boolean = false;
   private _achievements = new BehaviorSubject<Achievement[]>([]);
+  private _achievementsFetched: boolean = false;
   
-  private db: firebase.firestore.Firestore;
+  private db: Firestore;
 
   // private db: any;
   
   constructor(private http: HttpClient) {
-    this.db = firebase.firestore();
+    this.db = getFirestore();
     // this.db.enablePersistence().then(() => {}, () => {});
   }
 
@@ -46,7 +44,8 @@ export class SharedService {
       await this.http.post(environment.contactEmailLink, {
         name: query.name,
         email: query.email,
-        query: query.query
+        query: query.query,
+        subject: query.subject
       }).toPromise();
     } catch (error) {
       return error;
@@ -55,11 +54,12 @@ export class SharedService {
 
   // complete
   getProjectList (): Promise<ProjectCard[]> {
-    if (this._projects.value)
+    if (this._projectsFetched)
     {
       return this._projects.pipe(take(1)).toPromise();  
     }
-    return this.db.collection('project').where('toShow', '==', true).limit(50).orderBy('displayOrder').get().then((value) => {
+    const q = query(collection(this.db, 'project'), where('toShow', '==', true), limit(50), orderBy('displayOrder'));
+    return getDocs(q).then((value) => {
       let projects: ProjectCard[] = [];
       value.docs.forEach(tt => {
         let project = <ProjectCard>tt.data();
@@ -67,24 +67,26 @@ export class SharedService {
         projects.push(project);
       });
       this._projects.next(projects);
+      this._projectsFetched = true;
       return this._projects.pipe(take(1)).toPromise();
     });
   }
 
   // complete
   getAchievementList (): Promise<Achievement[]> {
-    if (this._achievements.value)
+    if (this._achievementsFetched)
     {
       return this._achievements.pipe(take(1)).toPromise();
     }
-    return this.db.collection('achievements').limit(50).orderBy('displayOrder').get().then((value) => {
+    const q = query(collection(this.db, 'achievements'), limit(50), orderBy('displayOrder'));
+    return getDocs(q).then((value) => {
       let achievements: Achievement[] = [];
       value.docs.forEach(tt => {
-        let achievement = <Achievement>tt.data();
-        achievement.achievementId = tt.id;
+        const achievement = <Achievement>tt.data();
         achievements.push(achievement);
       });
       this._achievements.next(achievements);
+      this._achievementsFetched = true;
       return this._achievements.pipe(take(1)).toPromise();
     });
   }

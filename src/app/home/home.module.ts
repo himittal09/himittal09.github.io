@@ -13,7 +13,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTabsModule } from '@angular/material/tabs';
 
@@ -48,7 +47,6 @@ export const homeRoutes: Routes = [
     MatTooltipModule,
     MatCardModule,
     MatButtonModule,
-    MatProgressBarModule,
     MatChipsModule,
     MatTabsModule
   ],

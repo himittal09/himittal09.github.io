@@ -26,14 +26,6 @@ mat-card {
     textarea {
       resize: vertical;
     }
-    mat-list-item {
-      mat-icon {
-        margin-right: 5px;
-      }
-      .mat-body {
-        cursor: default;
-      }
-    }
     .asdf {
       display: table;
       margin: 0 auto;
@@ -66,5 +58,15 @@ mat-card {
       width: 100%;
       max-width: 1000px;
     }
+  }
+}
+
+mat-list-item {
+  a {
+    display: flex;
+    // align-items: baseline;
+  }
+  mat-icon {
+    margin-right: 5px;
   }
 }
