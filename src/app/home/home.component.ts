@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer, SafeStyle, Title } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -7,7 +7,9 @@ import { SharedService } from '@app/shared/services/shared.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
 

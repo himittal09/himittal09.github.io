@@ -1,31 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { SharedService } from '@app/shared/services/shared.service';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
-import { Achievement } from '@app/shared/classes/achievement';
+import { Achievement, achievements } from '../../static/achievements';
 
 @Component({
   selector: 'app-achievements-tab',
   templateUrl: './achievements-tab.component.html',
-  styleUrls: ['./achievements-tab.component.scss']
+  styleUrls: ['./achievements-tab.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
-export class AchievementsTabComponent implements OnInit {
+export class AchievementsTabComponent {
 
   memeLink: string = '';
   achievements: Achievement[] = [];
 
-  constructor(private service: SharedService) { }
-
-  ngOnInit(): void {
-    this.service.getAchievementList().then((value) => {
-      if (!value.length)
-      {
-        this.memeLink = 'https://memegenerator.net/img/instances/39670850/heres-where-id-put-my-achievements-if-i-had-any.jpg';
-      }
-      this.achievements = value;
-    }).catch((error) => {
-      console.log(error);
-      this.memeLink = 'https://memegenerator.net/img/instances/39670850/heres-where-id-put-my-achievements-if-i-had-any.jpg';
-    });
+  constructor() {
+    this.achievements = achievements;
+    if (!this.achievements.length)
+    {
+      this.memeLink = 'assets/pictures/heres-where-id-put-my-achievements-if-i-had-any.jpg';
+    }
   }
 
 }

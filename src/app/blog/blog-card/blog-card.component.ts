@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -10,7 +10,9 @@ import { BlogService } from '../blog.service';
 @Component({
   selector: 'app-blog-card',
   templateUrl: './blog-card.component.html',
-  styleUrls: ['./blog-card.component.scss']
+  styleUrls: ['./blog-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class BlogCardComponent implements OnInit {
 

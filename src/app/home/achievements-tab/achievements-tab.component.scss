@@ -1,11 +1,11 @@
 .noach {
   display: block;
   margin: auto;
-  max-width: 500px;
-  max-height: 500px;;
+  max-width: min(500px, 100%);
+  max-height: min(500px, 100%);
 }
 
-mat-card {
+.achievement-card {
   margin-top: 15px;
   margin-bottom: 15px;
   .titlep {

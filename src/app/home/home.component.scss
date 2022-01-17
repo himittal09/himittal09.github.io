@@ -14,7 +14,7 @@
   $typography-config: mat.get-typography-config($config-or-theme);
   $my-font-family: mat.font-family($typography-config);
 
-  .container {
+  .no-pad-top {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -36,7 +36,7 @@
     object-fit: cover;
   }
 
-  .info-card-container {
+  .info-card-home {
     margin-top: -100px !important;
     mat-card {
       mat-card-header {
@@ -100,7 +100,7 @@
     }
   }
     
-  main {
+  main#main {
     nav {
       max-width: 2000px;
     }

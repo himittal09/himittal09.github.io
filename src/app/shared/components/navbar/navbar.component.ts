@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatIconRegistry } from '@angular/material/icon';
 
-import { SharedService } from '../../services/shared.service';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {
 
@@ -21,9 +21,8 @@ export class NavbarComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-              private ss: SharedService,
-              private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
   ) {
     this.matIconRegistry.addSvgIcon(
       'sun_icon',
@@ -36,11 +35,12 @@ export class NavbarComponent {
   }
 
   changeTheme() {
-    this.ss.toggleTheme();
+    document.body.classList.toggle('my-dark-theme');
   }
 
-  get isDayTheme (): boolean {
-    return this.ss.isDayTheme;
+  get isDayTheme(): boolean {
+    let cl: DOMTokenList = document.body.classList;
+    return !cl.contains('my-dark-theme');
   }
 
 }

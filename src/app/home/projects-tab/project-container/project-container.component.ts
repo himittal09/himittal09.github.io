@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-project-container',
   templateUrl: './project-container.component.html',
-  styleUrls: ['./project-container.component.scss']
+  styleUrls: ['./project-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ProjectContainerComponent {
 
