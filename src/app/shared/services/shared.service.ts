@@ -24,14 +24,14 @@ export class SharedService {
   }
 
   // complete
-  getResumeLink (fileName: string): string {
+  getResumeLink(fileName: string): string {
     const encoded = encodeURI(fileName);
     const fileURL = 'https://firebasestorage.googleapis.com/v0/b/portfolio-60c77.appspot.com/o/Resumes%2F' + encoded + '.pdf?alt=media';
     return fileURL;
   }
 
   // complete
-  async submitQuery (query: ContactQuery): Promise<any> {
+  async submitQuery(query: ContactQuery): Promise<any> {
     try {
       await this.http.post(environment.contactEmailLink, {
         name: query.name,

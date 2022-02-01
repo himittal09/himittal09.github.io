@@ -11,7 +11,7 @@ import { Achievement, achievements } from '../../static/achievements';
 })
 export class AchievementsTabComponent {
 
-  memeLink: string = '';
+  memeLink = '';
   achievements: Achievement[] = [];
 
   constructor() {

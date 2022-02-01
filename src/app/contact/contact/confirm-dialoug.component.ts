@@ -16,7 +16,7 @@ export class ConfirmDialougComponent {
   constructor(private dialogRef: MatDialogRef<ConfirmDialougComponent>,
               @Inject(MAT_DIALOG_DATA) public data: { [key: string]: any }) { }
 
-  closeDialoug () {
+  closeDialoug() {
     this.dialogRef.close();
   }
 

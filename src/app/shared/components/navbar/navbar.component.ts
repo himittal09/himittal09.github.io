@@ -21,8 +21,8 @@ export class NavbarComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+              private matIconRegistry: MatIconRegistry,
+              private domSanitizer: DomSanitizer
   ) {
     this.matIconRegistry.addSvgIcon(
       'sun_icon',
@@ -39,7 +39,7 @@ export class NavbarComponent {
   }
 
   get isDayTheme(): boolean {
-    let cl: DOMTokenList = document.body.classList;
+    const cl: DOMTokenList = document.body.classList;
     return !cl.contains('my-dark-theme');
   }
 

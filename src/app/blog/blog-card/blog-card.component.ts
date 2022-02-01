@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 
 import { first } from 'rxjs/operators';
 
-import { blogPost } from '@app/blog/blog_post';
+import { BlogPost } from '@app/blog/blog_post';
 import { BlogService } from '../blog.service';
 
 @Component({
@@ -16,12 +16,12 @@ import { BlogService } from '../blog.service';
 })
 export class BlogCardComponent implements OnInit {
 
-  blog: blogPost;
-  blogPostLiked: boolean = false;
-  preetyDate: string = '';
+  blog: BlogPost;
+  blogPostLiked = false;
+  preetyDate = '';
 
   constructor(private route: ActivatedRoute, private title: Title, private service: BlogService) {
-    this.blog = new blogPost(0, '', '', new Date());
+    this.blog = new BlogPost(0, '', '', new Date());
   }
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class BlogCardComponent implements OnInit {
     this.route.data.pipe(first()).subscribe({
       next: (ss) => {
         this.blog = ss.blog;
-        this.blog.body = this.blog.body.replace('\\n','\n');
+        this.blog.body = this.blog.body.replace('\\n', '\n');
         // work on this fucking piece of shit fuck
         this.preetyDate = this.blog.date.toLocaleDateString('en-IN');
       },
@@ -40,11 +40,11 @@ export class BlogCardComponent implements OnInit {
     });
   }
 
-  likeBlogPost ()
+  likeBlogPost()
   {
     this.blogPostLiked = true;
     this.blog.likes++;
-    const blogId: string = <string>this.blog.docID;
+    const blogId = this.blog.docID as string;
     this.service.likeOneBlog(blogId).catch(error => {
       console.log(error);
       this.blogPostLiked = false;

@@ -14,7 +14,7 @@ import { ProjectCard, projects } from '../../static/projects';
 export class ProjectsTabComponent implements OnInit {
 
   projects: ProjectCard[] = [];
-  message: string = 'Fetching Projects, please wait!!';
+  message = 'Fetching Projects, please wait!!';
 
   constructor(private matIconRegisty: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.projects = projects;
@@ -23,12 +23,12 @@ export class ProjectsTabComponent implements OnInit {
     }
   }
 
-  ngOnInit ()
+  ngOnInit()
   {
     this.projects.forEach((project: ProjectCard) => {
       if (project.iconType === 'svg') {
         this.matIconRegisty.addSvgIcon(
-          <string>project.iconName,
+          project.iconName as string,
           this.domSanitizer.bypassSecurityTrustResourceUrl(`../../../../assets/icons/${project.iconName}.svg`)
         );
       }

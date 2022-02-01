@@ -7,9 +7,9 @@ import { Router, Event, NavigationStart, NavigationCancel, NavigationEnd, Naviga
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  loading: boolean = false;
+  loading = false;
 
-  constructor (private router: Router) {
+  constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart)
       {

@@ -10,8 +10,8 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 export class ProjectContainerComponent {
 
   // name of the project
-  @Input() projectTitle: string = '';
-  
+  @Input() projectTitle = '';
+
   // deployed project link
   @Input() projectPublicLink: string | undefined = undefined;
 
@@ -19,16 +19,16 @@ export class ProjectContainerComponent {
   @Input() projectStack: string[] = [];
 
   // starcount in the repo
-  @Input() starCount: number = 0;
+  @Input() starCount = 0;
 
   // forkcount in the repo
-  @Input() forkCount: number = 0;
+  @Input() forkCount = 0;
 
   // long description, supports markdown
-  @Input() description: string = '';
+  @Input() description = '';
 
   // for quick overview
-  @Input() shortDescription: string = '';
+  @Input() shortDescription = '';
 
   // for displaying correctly
   @Input() iconType: 'svg' | 'png' = 'png';
@@ -38,9 +38,9 @@ export class ProjectContainerComponent {
 
   // give absolute path
   @Input() projectGithubLink: string | undefined = undefined;
-  
+
   // mention either employer or semester if learning
-  @Input() madeFor: string = '';
+  @Input() madeFor = '';
 
   // when did project development start
   @Input() developmentStartDate?: Date;
@@ -49,5 +49,5 @@ export class ProjectContainerComponent {
   @Input() developmentEndDate?: Date;
 
   // is project under development
-  @Input() isUnderDevelopment: boolean = true;
+  @Input() isUnderDevelopment = true;
 }

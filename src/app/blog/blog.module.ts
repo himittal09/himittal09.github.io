@@ -49,7 +49,7 @@ const blogRoutes: Routes = [
 })
 export class BlogModule {
 
-  constructor ()
+  constructor()
   {
 
     // import('./assets/js/marked/marked.min.js').then((aaa) => console.log(aaa), (e) => console.log(e));

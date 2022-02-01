@@ -37,21 +37,21 @@ export class HomeComponent implements OnInit {
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stackoverflow.svg')
     );
     this.imageURL = this.domSanitizer.bypassSecurityTrustStyle(`url(${'../../../../assets/pictures/background_arch.webp'})`);
-  
+
   }
 
   ngOnInit(): void {
     this.title.setTitle('Himanshu Mittal | Portfolio');
   }
 
-  getResume () {
+  getResume() {
     const resumeName = 'Resume - Himanshu Mittal';
-    
-    let link = this.service.getResumeLink(resumeName)
-    let pwa = window.open(link);
+
+    const link = this.service.getResumeLink(resumeName);
+    const pwa = window.open(link);
 
     // choosing to open in browser
-    if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
+    if (!pwa || pwa.closed || typeof pwa.closed === 'undefined') {
       alert( 'Please disable your Pop-up blocker and try again.');
     }
 

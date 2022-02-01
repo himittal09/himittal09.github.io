@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { blogPost } from '@app/blog/blog_post';
+import { BlogPost } from '@app/blog/blog_post';
 import { BlogService } from '../blog.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { BlogService } from '../blog.service';
 })
 export class BlogListComponent implements OnInit {
 
-  displayMessage: string = 'Loading blogs...';
+  displayMessage = 'Loading blogs...';
 
   constructor(private title: Title, private service: BlogService, private router: Router) { }
 
@@ -29,21 +29,21 @@ export class BlogListComponent implements OnInit {
     }).catch(error => console.log(error));
   }
 
-  getNextBlogs (firstFetch: boolean): Promise<void> {
+  getNextBlogs(firstFetch: boolean): Promise<void> {
     return this.service.getBlogList(firstFetch);
   }
 
-  get isLast (): boolean
+  get isLast(): boolean
   {
     return this.service.isLastBlog;
   }
 
-  get blogs (): blogPost[]
+  get blogs(): BlogPost[]
   {
     return this.service.blogs;
   }
 
-  redirectToBlog (title: string)
+  redirectToBlog(title: string)
   {
     this.router.navigate(['blog', title]);
   }

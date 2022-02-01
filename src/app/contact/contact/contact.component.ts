@@ -16,15 +16,15 @@ import { ConfirmDialougComponent } from './confirm-dialoug.component';
 })
 export class ContactComponent implements OnInit {
 
-  constructor (private service: SharedService,
-               private dialog: MatDialog,
-               private title: Title) { }
+  constructor(private service: SharedService,
+              private dialog: MatDialog,
+              private title: Title) { }
 
   ngOnInit(): void {
     this.title.setTitle('Himanshu Mittal | Contact');
   }
 
-  onSubmit (queryform: NgForm) {
+  onSubmit(queryform: NgForm) {
     this.service.submitQuery(queryform.value)
       .then(docRef => {
         const dialogRef = this.dialog.open(ConfirmDialougComponent, {

@@ -1,13 +1,13 @@
-import { Timestamp } from "firebase/firestore";
+import { Timestamp } from 'firebase/firestore';
 
-export class blogPost {
+export class BlogPost {
   likes: number;
   date: Date;
   title: string;
   body: string;
   docID?: string;
 
-  constructor (likes: number, title: string, body: string, date: Date, docID?: string) {
+  constructor(likes: number, title: string, body: string, date: Date, docID?: string) {
     this.body = body;
     this.likes = likes;
     this.title = title;
@@ -17,15 +17,15 @@ export class blogPost {
 }
 
 export const blogPostConverter = {
-  fromFirestore (
+  fromFirestore(
     snapshot: any,
     options: any
-  ): blogPost {
-    let blog = snapshot.data();
+  ): BlogPost {
+    const blog = snapshot.data();
     blog.docID = snapshot.id;
-    return new blogPost(blog.likes, blog.title,blog.body, blog.date.toDate(), blog.docID);
+    return new BlogPost(blog.likes, blog.title, blog.body, blog.date.toDate(), blog.docID);
   },
-  toFirestore (blog: blogPost): any {
+  toFirestore(blog: BlogPost): any {
     return {
       likes: blog.likes,
       date: Timestamp.fromDate(blog.date),
