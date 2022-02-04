@@ -1,24 +1,19 @@
-import { Component } from '@angular/core';
-import { Router, Event, NavigationStart, NavigationCancel, NavigationEnd, NavigationError } from '@angular/router';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { Router, Event, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   loading = false;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart)
-      {
-        this.loading = true;
-      }
-      else if (event instanceof NavigationCancel || event instanceof NavigationEnd || event instanceof NavigationError)
-      {
-        this.loading = false;
-      }
+      this.loading = event instanceof NavigationStart;
     });
   }
 }

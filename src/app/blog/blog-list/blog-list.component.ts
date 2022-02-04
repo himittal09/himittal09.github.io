@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -16,12 +16,13 @@ export class BlogListComponent implements OnInit {
 
   displayMessage = 'Loading blogs...';
 
-  constructor(private title: Title, private service: BlogService, private router: Router) { }
+  constructor(private title: Title, private service: BlogService, private router: Router, private ref: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.title.setTitle('Himanshu Mittal | Blog');
 
     this.getNextBlogs(true).then(() => {
+      this.ref.detectChanges();
       if (this.isLast && !this.blogs.length)
       {
         this.displayMessage = 'No Blogs to display!!';

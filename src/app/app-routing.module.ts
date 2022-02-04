@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { homeRoutes } from './home/home.module';
 
-import { RouteNotFoundComponent } from './shared/components/route-not-found/route-not-found.component';
+import { RouteNotFoundComponent } from './shared/route-not-found/route-not-found.component';
 
 const routes: Routes = [
   {
@@ -27,7 +27,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

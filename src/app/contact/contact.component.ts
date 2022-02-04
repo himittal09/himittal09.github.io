@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 
-import { SharedService } from '@app/shared/services/shared.service';
+import { SharedService } from '@app/shared/shared.service';
 
 import { ConfirmDialougComponent } from './confirm-dialoug.component';
 

@@ -26,8 +26,8 @@
       <span><a [routerLink]="['/']">Himanshu Mittal</a></span>
       <span class="left-spacer"></span>
       <mat-nav-list class="horizontal-list" *ngIf="(isHandset$ | async) === false">
-        <a mat-flat-button [routerLink]="['contact']">Contact</a>
-        <a mat-flat-button [routerLink]="['blog']">Blog</a>
+        <a mat-button [routerLink]="['contact']">Contact</a>
+        <a mat-button [routerLink]="['blog']">Blog</a>
         <button mat-icon-button (click)="changeTheme()" aria-label="Switch Theme">
           <mat-icon aria-hidden="false" svgIcon="sun_icon" *ngIf="!isDayTheme"></mat-icon>
           <mat-icon aria-hidden="false" svgIcon="moon_icon" *ngIf="isDayTheme"></mat-icon>

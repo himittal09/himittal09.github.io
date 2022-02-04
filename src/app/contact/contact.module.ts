@@ -10,8 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 
-import { ContactComponent } from './contact/contact.component';
-import { ConfirmDialougComponent } from './contact/confirm-dialoug.component';
+import { ContactComponent } from './contact.component';
+import { ConfirmDialougComponent } from './confirm-dialoug.component';
 
 export const blogRoutes: Routes = [
   {

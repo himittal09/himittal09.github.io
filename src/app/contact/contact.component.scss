@@ -26,34 +26,6 @@
     textarea {
       resize: vertical;
     }
-    .asdf {
-      display: table;
-      margin: 0 auto;
-      width: 100%;
-      text-align: center;
-      .line-container {
-        margin: 15px auto;
-        button {
-          box-shadow: none;
-          cursor: default;
-        }
-        &:before,&:after{
-          content:" ";
-          width: calc(50% - 40px);
-          height: 1px;
-          margin: 0;
-          vertical-align: super;
-          background-color:grey;
-          display: inline-block;
-        }
-        &:before {
-          margin-right: 10px;
-        }
-        &:after {
-          margin-left: 10px;
-        }
-      }
-    }
     .example-full-width {
       width: 100%;
       max-width: 1000px;
@@ -61,12 +33,44 @@
   }
 }
 
+.reducing-seperator {
+  display: table;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  .line-container {
+    margin: 15px auto;
+    button {
+      box-shadow: none;
+      cursor: default;
+    }
+    &:before,&:after{
+      content:" ";
+      width: calc(50% - 40px);
+      height: 1px;
+      margin: 0;
+      vertical-align: super;
+      background-color:grey;
+      display: inline-block;
+    }
+    &:before {
+      margin-right: 10px;
+    }
+    &:after {
+      margin-left: 10px;
+    }
+  }
+}
+
 .contact-icons {
+  &:hover {
+    color: #ea4134;
+  }
   a {
     display: flex;
-    // align-items: baseline;
   }
   mat-icon {
+    vertical-align: middle;
     margin-right: 5px;
   }
 }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@
 import { DomSanitizer, SafeStyle, Title } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
-import { SharedService } from '@app/shared/services/shared.service';
+import { SharedService } from '@app/shared/shared.service';
 
 @Component({
   selector: 'app-home',

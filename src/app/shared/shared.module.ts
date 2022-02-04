@@ -7,8 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
-import { RouteNotFoundComponent } from '@components/route-not-found/route-not-found.component';
-import { NavbarComponent } from '@components/navbar/navbar.component';
+import { RouteNotFoundComponent } from '@app/shared/route-not-found/route-not-found.component';
+import { NavbarComponent } from '@app/shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({

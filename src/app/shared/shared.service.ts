@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { getFirestore, Firestore } from 'firebase/firestore';
-
 import { environment } from '@environments/environment';
 
 export interface ContactQuery {
@@ -17,11 +15,7 @@ export interface ContactQuery {
 })
 export class SharedService {
 
-  private db: Firestore;
-
-  constructor(private http: HttpClient) {
-    this.db = getFirestore();
-  }
+  constructor(private http: HttpClient) {}
 
   // complete
   getResumeLink(fileName: string): string {
@@ -31,9 +25,9 @@ export class SharedService {
   }
 
   // complete
-  async submitQuery(query: ContactQuery): Promise<any> {
+  submitQuery(query: ContactQuery): Promise<any> {
     try {
-      await this.http.post(environment.contactEmailLink, {
+      return this.http.post(environment.contactEmailLink, {
         name: query.name,
         email: query.email,
         query: query.query,
